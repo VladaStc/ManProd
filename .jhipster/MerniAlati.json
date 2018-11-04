@@ -1,0 +1,44 @@
+{
+    "name": "MerniAlati",
+    "fields": [
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vrsta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jedMere",
+            "fieldType": "JedMere",
+            "fieldValues": "KOM,KG,L,M2,M3,TABLA"
+        },
+        {
+            "fieldName": "namena",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cena",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "trajanje",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "bazdarenje",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181104012429",
+    "entityTableName": "merni_alati",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,26 @@
+{
+    "manProdApp": {
+        "kupovniProizvod": {
+            "home": {
+                "title": "Kupovni Proizvods",
+                "createLabel": "Kreiraj novi Kupovni Proizvod",
+                "createOrEditLabel": "Kreirajte ili izmenite Kupovni Proizvod"
+            },
+            "created": "Kreiran je novi Kupovni Proizvod pod nazivom {{ param }}",
+            "updated": "Kupovni Proizvod pod nazivom {{ param }} je ažuriran",
+            "deleted": "Kupovni Proizvod pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Kupovni Proizvod pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Kupovni Proizvod"
+            },
+            "naziv": "Naziv",
+            "vrsta": "Vrsta",
+            "jedMere": "Jed Mere",
+            "namena": "Namena",
+            "cena": "Cena",
+            "napomena": "Napomena"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "manProdApp": {
+        "zahvati": {
+            "home": {
+                "title": "Zahvatis",
+                "createLabel": "Create a new Zahvati",
+                "createOrEditLabel": "Create or edit a Zahvati"
+            },
+            "created": "A new Zahvati is created with identifier {{ param }}",
+            "updated": "A Zahvati is updated with identifier {{ param }}",
+            "deleted": "A Zahvati is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Zahvati {{ id }}?"
+            },
+            "detail": {
+                "title": "Zahvati"
+            },
+            "naziv": "Naziv",
+            "vremeRada": "Vreme Rada",
+            "pomocnoVreme": "Pomocno Vreme",
+            "cena": "Cena",
+            "skica": "Skica"
+        }
+    }
+}

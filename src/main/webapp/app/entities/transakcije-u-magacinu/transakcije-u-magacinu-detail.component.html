@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="transakcijeUMagacinu">
+            <h2><span jhiTranslate="manProdApp.transakcijeUMagacinu.detail.title">Transakcije U Magacinu</span> {{transakcijeUMagacinu.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.transakcijeUMagacinu.ulaz">Ulaz</span></dt>
+                <dd>
+                    <span>{{transakcijeUMagacinu.ulaz}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.transakcijeUMagacinu.izlaz">Izlaz</span></dt>
+                <dd>
+                    <span>{{transakcijeUMagacinu.izlaz}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.transakcijeUMagacinu.stanje">Stanje</span></dt>
+                <dd>
+                    <span>{{transakcijeUMagacinu.stanje}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.transakcijeUMagacinu.napomena">Napomena</span></dt>
+                <dd>
+                    <span>{{transakcijeUMagacinu.napomena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.transakcijeUMagacinu.datum">Datum</span></dt>
+                <dd>
+                    <span>{{transakcijeUMagacinu.datum}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.transakcijeUMagacinu.tipMagacina">Tip Magacina</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'manProdApp.TipMagacina.' + transakcijeUMagacinu.tipMagacina}}">{{transakcijeUMagacinu.tipMagacina}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/transakcije-u-magacinu', transakcijeUMagacinu.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

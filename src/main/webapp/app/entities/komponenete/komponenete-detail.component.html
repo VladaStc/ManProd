@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="komponenete">
+            <h2><span jhiTranslate="manProdApp.komponenete.detail.title">Komponenete</span> {{komponenete.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.komponenete.sifra">Sifra</span></dt>
+                <dd>
+                    <span>{{komponenete.sifra}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.komponenete.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{komponenete.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.komponenete.vrsta">Vrsta</span></dt>
+                <dd>
+                    <span>{{komponenete.vrsta}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.komponenete.jedMere">Jed Mere</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'manProdApp.JedMere.' + komponenete.jedMere}}">{{komponenete.jedMere}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.komponenete.namena">Namena</span></dt>
+                <dd>
+                    <span>{{komponenete.namena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.komponenete.nabavnaCena">Nabavna Cena</span></dt>
+                <dd>
+                    <span>{{komponenete.nabavnaCena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.komponenete.napomena">Napomena</span></dt>
+                <dd>
+                    <span>{{komponenete.napomena}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/komponenete', komponenete.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

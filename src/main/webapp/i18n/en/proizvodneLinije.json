@@ -1,0 +1,27 @@
+{
+    "manProdApp": {
+        "proizvodneLinije": {
+            "home": {
+                "title": "Proizvodne Linijes",
+                "createLabel": "Create a new Proizvodne Linije",
+                "createOrEditLabel": "Create or edit a Proizvodne Linije"
+            },
+            "created": "A new Proizvodne Linije is created with identifier {{ param }}",
+            "updated": "A Proizvodne Linije is updated with identifier {{ param }}",
+            "deleted": "A Proizvodne Linije is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Proizvodne Linije {{ id }}?"
+            },
+            "detail": {
+                "title": "Proizvodne Linije"
+            },
+            "naziv": "Naziv",
+            "lokacija": "Lokacija",
+            "povrsina": "Povrsina",
+            "rukovodilac": "Rukovodilac",
+            "napomena": "Napomena",
+            "odelenje": "Odelenje",
+            "obradniSistem": "Obradni Sistem"
+        }
+    }
+}

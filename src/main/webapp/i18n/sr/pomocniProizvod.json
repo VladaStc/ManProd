@@ -1,0 +1,26 @@
+{
+    "manProdApp": {
+        "pomocniProizvod": {
+            "home": {
+                "title": "Pomocni Proizvods",
+                "createLabel": "Kreiraj novi Pomocni Proizvod",
+                "createOrEditLabel": "Kreirajte ili izmenite Pomocni Proizvod"
+            },
+            "created": "Kreiran je novi Pomocni Proizvod pod nazivom {{ param }}",
+            "updated": "Pomocni Proizvod pod nazivom {{ param }} je ažuriran",
+            "deleted": "Pomocni Proizvod pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Pomocni Proizvod pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Pomocni Proizvod"
+            },
+            "naziv": "Naziv",
+            "vrsta": "Vrsta",
+            "jedMere": "Jed Mere",
+            "namena": "Namena",
+            "cena": "Cena",
+            "napomena": "Napomena"
+        }
+    }
+}

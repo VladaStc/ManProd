@@ -1,0 +1,66 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="manProdApp.merniAlati.home.title">Merni Alatis</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-merni-alati" [routerLink]="['/merni-alati/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="manProdApp.merniAlati.home.createLabel">
+            Create new Merni Alati
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="merniAlatis">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="manProdApp.merniAlati.naziv">Naziv</span></th>
+            <th><span jhiTranslate="manProdApp.merniAlati.vrsta">Vrsta</span></th>
+            <th><span jhiTranslate="manProdApp.merniAlati.jedMere">Jed Mere</span></th>
+            <th><span jhiTranslate="manProdApp.merniAlati.namena">Namena</span></th>
+            <th><span jhiTranslate="manProdApp.merniAlati.cena">Cena</span></th>
+            <th><span jhiTranslate="manProdApp.merniAlati.trajanje">Trajanje</span></th>
+            <th><span jhiTranslate="manProdApp.merniAlati.bazdarenje">Bazdarenje</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let merniAlati of merniAlatis ;trackBy: trackId">
+                <td><a [routerLink]="['/merni-alati', merniAlati.id, 'view' ]">{{merniAlati.id}}</a></td>
+                <td>{{merniAlati.naziv}}</td>
+                <td>{{merniAlati.vrsta}}</td>
+                <td jhiTranslate="{{'manProdApp.JedMere.' + merniAlati.jedMere}}">{{merniAlati.jedMere}}</td>
+                <td>{{merniAlati.namena}}</td>
+                <td>{{merniAlati.cena}}</td>
+                <td>{{merniAlati.trajanje | date:'medium'}}</td>
+                <td>{{merniAlati.bazdarenje | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/merni-alati', merniAlati.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/merni-alati', merniAlati.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'merni-alati/'+ merniAlati.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

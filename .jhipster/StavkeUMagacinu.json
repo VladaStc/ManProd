@@ -1,0 +1,24 @@
+{
+    "name": "StavkeUMagacinu",
+    "fields": [
+        {
+            "fieldName": "stanje",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "tipMagacina",
+            "fieldType": "TipMagacina",
+            "fieldValues": "MAGACIN_SIROVINA,MAGACIN_GOTOVIH_PROIZVODA,MAGACIN_PROIZVODNJE_U_TOKU"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181104012424",
+    "entityTableName": "stavke_u_magacinu",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

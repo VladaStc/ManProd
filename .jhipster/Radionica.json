@@ -1,0 +1,44 @@
+{
+    "name": "Radionica",
+    "fields": [
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lokacija",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "povrsina",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "rukovodilac",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "napomena",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "radnoMesto",
+            "otherEntityName": "radnoMesto",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "radionica"
+        }
+    ],
+    "changelogDate": "20181104012418",
+    "entityTableName": "radionica",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

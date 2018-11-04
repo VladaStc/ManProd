@@ -1,0 +1,35 @@
+{
+    "name": "Zahvati",
+    "fields": [
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vremeRada",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "pomocnoVreme",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "cena",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "skica",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181104012446",
+    "entityTableName": "zahvati",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

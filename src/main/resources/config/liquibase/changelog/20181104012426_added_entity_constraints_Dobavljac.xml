@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Dobavljac.
+    -->
+    <changeSet id="20181104012426-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="alati_id"
+                                 baseTableName="dobavljac"
+                                 constraintName="fk_dobavljac_alati_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="alati"/>
+
+        <addForeignKeyConstraint baseColumnNames="pribori_id"
+                                 baseTableName="dobavljac"
+                                 constraintName="fk_dobavljac_pribori_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pribori"/>
+
+        <addForeignKeyConstraint baseColumnNames="merni_alati_id"
+                                 baseTableName="dobavljac"
+                                 constraintName="fk_dobavljac_merni_alati_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="merni_alati"/>
+
+    </changeSet>
+</databaseChangeLog>

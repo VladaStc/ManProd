@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-radni-nalog-heading" jhiTranslate="manProdApp.radniNalog.home.createOrEditLabel">Create or edit a Radni Nalog</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!radniNalog.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="radniNalog.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.radniNalog.naziv" for="field_naziv">Naziv</label>
+                    <input type="text" class="form-control" name="naziv" id="field_naziv"
+                        [(ngModel)]="radniNalog.naziv" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.radniNalog.datumIVremeOtvaranja" for="field_datumIVremeOtvaranja">Datum I Vreme Otvaranja</label>
+                    <div class="d-flex">
+                        <input id="field_datumIVremeOtvaranja" type="datetime-local" class="form-control" name="datumIVremeOtvaranja" [(ngModel)]="datumIVremeOtvaranja"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.radniNalog.datumIVremeZatvaranja" for="field_datumIVremeZatvaranja">Datum I Vreme Zatvaranja</label>
+                    <div class="d-flex">
+                        <input id="field_datumIVremeZatvaranja" type="datetime-local" class="form-control" name="datumIVremeZatvaranja" [(ngModel)]="datumIVremeZatvaranja"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.radniNalog.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" [(ngModel)]="radniNalog.status" id="field_status" >
+                        <option value="OTVOREN">{{'manProdApp.Status.OTVOREN' | translate}}</option>
+                        <option value="AKTIVAN">{{'manProdApp.Status.AKTIVAN' | translate}}</option>
+                        <option value="ZATVOREN">{{'manProdApp.Status.ZATVOREN' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.radniNalog.nosilac" for="field_nosilac">Nosilac</label>
+                    <input type="text" class="form-control" name="nosilac" id="field_nosilac"
+                        [(ngModel)]="radniNalog.nosilac" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.radniNalog.cena" for="field_cena">Cena</label>
+                    <input type="number" class="form-control" name="cena" id="field_cena"
+                        [(ngModel)]="radniNalog.cena" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.radniNalog.kolicina" for="field_kolicina">Kolicina</label>
+                    <input type="number" class="form-control" name="kolicina" id="field_kolicina"
+                        [(ngModel)]="radniNalog.kolicina" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

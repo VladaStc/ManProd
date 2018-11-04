@@ -1,0 +1,27 @@
+{
+    "manProdApp": {
+        "merniAlati": {
+            "home": {
+                "title": "Merni Alatis",
+                "createLabel": "Create a new Merni Alati",
+                "createOrEditLabel": "Create or edit a Merni Alati"
+            },
+            "created": "A new Merni Alati is created with identifier {{ param }}",
+            "updated": "A Merni Alati is updated with identifier {{ param }}",
+            "deleted": "A Merni Alati is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Merni Alati {{ id }}?"
+            },
+            "detail": {
+                "title": "Merni Alati"
+            },
+            "naziv": "Naziv",
+            "vrsta": "Vrsta",
+            "jedMere": "Jed Mere",
+            "namena": "Namena",
+            "cena": "Cena",
+            "trajanje": "Trajanje",
+            "bazdarenje": "Bazdarenje"
+        }
+    }
+}

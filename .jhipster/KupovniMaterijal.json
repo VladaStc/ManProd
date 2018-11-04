@@ -1,0 +1,44 @@
+{
+    "name": "KupovniMaterijal",
+    "fields": [
+        {
+            "fieldName": "sifra",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vrsta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jedMere",
+            "fieldType": "JedMere",
+            "fieldValues": "KOM,KG,L,M2,M3,TABLA"
+        },
+        {
+            "fieldName": "namena",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nabavnaCena",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "napomena",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181104012436",
+    "entityTableName": "kupovni_materijal",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,26 @@
+{
+    "manProdApp": {
+        "oprema": {
+            "home": {
+                "title": "Opremas",
+                "createLabel": "Kreiraj novi Oprema",
+                "createOrEditLabel": "Kreirajte ili izmenite Oprema"
+            },
+            "created": "Kreiran je novi Oprema pod nazivom {{ param }}",
+            "updated": "Oprema pod nazivom {{ param }} je ažuriran",
+            "deleted": "Oprema pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Oprema pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Oprema"
+            },
+            "naziv": "Naziv",
+            "lokacija": "Lokacija",
+            "struktura": "Struktura",
+            "rukovodilac": "Rukovodilac",
+            "napomena": "Napomena",
+            "obradniSistem": "Obradni Sistem"
+        }
+    }
+}

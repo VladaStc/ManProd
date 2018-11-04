@@ -1,0 +1,25 @@
+{
+    "manProdApp": {
+        "zahvati": {
+            "home": {
+                "title": "Zahvatis",
+                "createLabel": "Kreiraj novi Zahvati",
+                "createOrEditLabel": "Kreirajte ili izmenite Zahvati"
+            },
+            "created": "Kreiran je novi Zahvati pod nazivom {{ param }}",
+            "updated": "Zahvati pod nazivom {{ param }} je ažuriran",
+            "deleted": "Zahvati pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Zahvati pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Zahvati"
+            },
+            "naziv": "Naziv",
+            "vremeRada": "Vreme Rada",
+            "pomocnoVreme": "Pomocno Vreme",
+            "cena": "Cena",
+            "skica": "Skica"
+        }
+    }
+}

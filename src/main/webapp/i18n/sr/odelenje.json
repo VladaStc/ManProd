@@ -1,0 +1,27 @@
+{
+    "manProdApp": {
+        "odelenje": {
+            "home": {
+                "title": "Odelenjes",
+                "createLabel": "Kreiraj novi Odelenje",
+                "createOrEditLabel": "Kreirajte ili izmenite Odelenje"
+            },
+            "created": "Kreiran je novi Odelenje pod nazivom {{ param }}",
+            "updated": "Odelenje pod nazivom {{ param }} je ažuriran",
+            "deleted": "Odelenje pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Odelenje pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Odelenje"
+            },
+            "naziv": "Naziv",
+            "lokacija": "Lokacija",
+            "povrsina": "Povrsina",
+            "rukovodilac": "Rukovodilac",
+            "napomena": "Napomena",
+            "radionica": "Radionica",
+            "obradniSistem": "Obradni Sistem"
+        }
+    }
+}

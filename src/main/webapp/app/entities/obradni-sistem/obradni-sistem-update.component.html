@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-obradni-sistem-heading" jhiTranslate="manProdApp.obradniSistem.home.createOrEditLabel">Create or edit a Obradni Sistem</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!obradniSistem.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="obradniSistem.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.obradniSistem.naziv" for="field_naziv">Naziv</label>
+                    <input type="text" class="form-control" name="naziv" id="field_naziv"
+                        [(ngModel)]="obradniSistem.naziv" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.obradniSistem.lokacija" for="field_lokacija">Lokacija</label>
+                    <input type="text" class="form-control" name="lokacija" id="field_lokacija"
+                        [(ngModel)]="obradniSistem.lokacija" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.obradniSistem.struktura" for="field_struktura">Struktura</label>
+                    <input type="text" class="form-control" name="struktura" id="field_struktura"
+                        [(ngModel)]="obradniSistem.struktura" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.obradniSistem.rukovodilac" for="field_rukovodilac">Rukovodilac</label>
+                    <input type="text" class="form-control" name="rukovodilac" id="field_rukovodilac"
+                        [(ngModel)]="obradniSistem.rukovodilac" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.obradniSistem.napomena" for="field_napomena">Napomena</label>
+                    <input type="text" class="form-control" name="napomena" id="field_napomena"
+                        [(ngModel)]="obradniSistem.napomena" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.obradniSistem.konstruktivnaSastavnica" for="field_konstruktivnaSastavnica">Konstruktivna Sastavnica</label>
+                    <select class="form-control" id="field_konstruktivnaSastavnica" name="konstruktivnaSastavnica" [(ngModel)]="obradniSistem.konstruktivnaSastavnica">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="konstruktivnaSastavnicaOption.id === obradniSistem.konstruktivnaSastavnica?.id ? obradniSistem.konstruktivnaSastavnica : konstruktivnaSastavnicaOption" *ngFor="let konstruktivnaSastavnicaOption of konstruktivnasastavnicas; trackBy: trackKonstruktivnaSastavnicaById">{{konstruktivnaSastavnicaOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity OperacijeURadnomNalogu.
+    -->
+    <changeSet id="20181104012444-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="radni_nalog_id"
+                                 baseTableName="operacije_u_radnom_nalogu"
+                                 constraintName="fk_operacijeuradnom_nalogu_radni_nalog_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="radni_nalog"/>
+
+    </changeSet>
+</databaseChangeLog>

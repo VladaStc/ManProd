@@ -1,0 +1,72 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="manProdApp.pomocniMaterijal.home.title">Pomocni Materijals</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pomocni-materijal" [routerLink]="['/pomocni-materijal/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="manProdApp.pomocniMaterijal.home.createLabel">
+            Create new Pomocni Materijal
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="pomocniMaterijals">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="manProdApp.pomocniMaterijal.sifra">Sifra</span></th>
+            <th><span jhiTranslate="manProdApp.pomocniMaterijal.naziv">Naziv</span></th>
+            <th><span jhiTranslate="manProdApp.pomocniMaterijal.vrsta">Vrsta</span></th>
+            <th><span jhiTranslate="manProdApp.pomocniMaterijal.jedMere">Jed Mere</span></th>
+            <th><span jhiTranslate="manProdApp.pomocniMaterijal.namena">Namena</span></th>
+            <th><span jhiTranslate="manProdApp.pomocniMaterijal.nabavnaCena">Nabavna Cena</span></th>
+            <th><span jhiTranslate="manProdApp.pomocniMaterijal.napomena">Napomena</span></th>
+            <th><span jhiTranslate="manProdApp.pomocniMaterijal.zahvati">Zahvati</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let pomocniMaterijal of pomocniMaterijals ;trackBy: trackId">
+                <td><a [routerLink]="['/pomocni-materijal', pomocniMaterijal.id, 'view' ]">{{pomocniMaterijal.id}}</a></td>
+                <td>{{pomocniMaterijal.sifra}}</td>
+                <td>{{pomocniMaterijal.naziv}}</td>
+                <td>{{pomocniMaterijal.vrsta}}</td>
+                <td jhiTranslate="{{'manProdApp.JedMere.' + pomocniMaterijal.jedMere}}">{{pomocniMaterijal.jedMere}}</td>
+                <td>{{pomocniMaterijal.namena}}</td>
+                <td>{{pomocniMaterijal.nabavnaCena}}</td>
+                <td>{{pomocniMaterijal.napomena}}</td>
+                <td>
+                    <div *ngIf="pomocniMaterijal.zahvati">
+                        <a [routerLink]="['../zahvati', pomocniMaterijal.zahvati?.id, 'view' ]" >{{pomocniMaterijal.zahvati?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/pomocni-materijal', pomocniMaterijal.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/pomocni-materijal', pomocniMaterijal.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'pomocni-materijal/'+ pomocniMaterijal.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

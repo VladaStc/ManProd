@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="radnoMesto">
+            <h2><span jhiTranslate="manProdApp.radnoMesto.detail.title">Radno Mesto</span> {{radnoMesto.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.radnoMesto.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{radnoMesto.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radnoMesto.lokacija">Lokacija</span></dt>
+                <dd>
+                    <span>{{radnoMesto.lokacija}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radnoMesto.povrsina">Povrsina</span></dt>
+                <dd>
+                    <span>{{radnoMesto.povrsina}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radnoMesto.rukovodilac">Rukovodilac</span></dt>
+                <dd>
+                    <span>{{radnoMesto.rukovodilac}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radnoMesto.normaSat">Norma Sat</span></dt>
+                <dd>
+                    <span>{{radnoMesto.normaSat}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radnoMesto.radnici">Radnici</span></dt>
+                <dd>
+                    <div *ngIf="radnoMesto.radnici">
+                        <a [routerLink]="['/radnici', radnoMesto.radnici?.id, 'view']">{{radnoMesto.radnici?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radnoMesto.operacijeURadnomNalogu">Operacije U Radnom Nalogu</span></dt>
+                <dd>
+                    <div *ngIf="radnoMesto.operacijeURadnomNalogu">
+                        <a [routerLink]="['/operacije-u-radnom-nalogu', radnoMesto.operacijeURadnomNalogu?.id, 'view']">{{radnoMesto.operacijeURadnomNalogu?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radnoMesto.operacije">Operacije</span></dt>
+                <dd>
+                    <div *ngIf="radnoMesto.operacije">
+                        <a [routerLink]="['/operacije', radnoMesto.operacije?.id, 'view']">{{radnoMesto.operacije?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radnoMesto.zahvati">Zahvati</span></dt>
+                <dd>
+                    <div *ngIf="radnoMesto.zahvati">
+                        <a [routerLink]="['/zahvati', radnoMesto.zahvati?.id, 'view']">{{radnoMesto.zahvati?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/radno-mesto', radnoMesto.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

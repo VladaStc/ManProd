@@ -1,0 +1,66 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="manProdApp.radniNalog.home.title">Radni Nalogs</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-radni-nalog" [routerLink]="['/radni-nalog/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="manProdApp.radniNalog.home.createLabel">
+            Create new Radni Nalog
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="radniNalogs">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="naziv"><span jhiTranslate="manProdApp.radniNalog.naziv">Naziv</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="datumIVremeOtvaranja"><span jhiTranslate="manProdApp.radniNalog.datumIVremeOtvaranja">Datum I Vreme Otvaranja</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="datumIVremeZatvaranja"><span jhiTranslate="manProdApp.radniNalog.datumIVremeZatvaranja">Datum I Vreme Zatvaranja</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="status"><span jhiTranslate="manProdApp.radniNalog.status">Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nosilac"><span jhiTranslate="manProdApp.radniNalog.nosilac">Nosilac</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cena"><span jhiTranslate="manProdApp.radniNalog.cena">Cena</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="kolicina"><span jhiTranslate="manProdApp.radniNalog.kolicina">Kolicina</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let radniNalog of radniNalogs ;trackBy: trackId">
+                <td><a [routerLink]="['/radni-nalog', radniNalog.id, 'view' ]">{{radniNalog.id}}</a></td>
+                <td>{{radniNalog.naziv}}</td>
+                <td>{{radniNalog.datumIVremeOtvaranja | date:'medium'}}</td>
+                <td>{{radniNalog.datumIVremeZatvaranja | date:'medium'}}</td>
+                <td jhiTranslate="{{'manProdApp.Status.' + radniNalog.status}}">{{radniNalog.status}}</td>
+                <td>{{radniNalog.nosilac}}</td>
+                <td>{{radniNalog.cena}}</td>
+                <td>{{radniNalog.kolicina}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/radni-nalog', radniNalog.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/radni-nalog', radniNalog.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'radni-nalog/'+ radniNalog.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

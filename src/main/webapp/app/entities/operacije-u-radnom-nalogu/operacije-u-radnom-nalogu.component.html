@@ -1,0 +1,72 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="manProdApp.operacijeURadnomNalogu.home.title">Operacije U Radnom Nalogus</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-operacije-u-radnom-nalogu" [routerLink]="['/operacije-u-radnom-nalogu/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="manProdApp.operacijeURadnomNalogu.home.createLabel">
+            Create new Operacije U Radnom Nalogu
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="operacijeURadnomNalogus">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="manProdApp.operacijeURadnomNalogu.naziv">Naziv</span></th>
+            <th><span jhiTranslate="manProdApp.operacijeURadnomNalogu.vremeRada">Vreme Rada</span></th>
+            <th><span jhiTranslate="manProdApp.operacijeURadnomNalogu.pripremnoZavrsnoVreme">Pripremno Zavrsno Vreme</span></th>
+            <th><span jhiTranslate="manProdApp.operacijeURadnomNalogu.cena">Cena</span></th>
+            <th><span jhiTranslate="manProdApp.operacijeURadnomNalogu.skica">Skica</span></th>
+            <th><span jhiTranslate="manProdApp.operacijeURadnomNalogu.datumIVremePocetka">Datum I Vreme Pocetka</span></th>
+            <th><span jhiTranslate="manProdApp.operacijeURadnomNalogu.datumIVremeZavrsetka">Datum I Vreme Zavrsetka</span></th>
+            <th><span jhiTranslate="manProdApp.operacijeURadnomNalogu.radniNalog">Radni Nalog</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let operacijeURadnomNalogu of operacijeURadnomNalogus ;trackBy: trackId">
+                <td><a [routerLink]="['/operacije-u-radnom-nalogu', operacijeURadnomNalogu.id, 'view' ]">{{operacijeURadnomNalogu.id}}</a></td>
+                <td>{{operacijeURadnomNalogu.naziv}}</td>
+                <td>{{operacijeURadnomNalogu.vremeRada}}</td>
+                <td>{{operacijeURadnomNalogu.pripremnoZavrsnoVreme}}</td>
+                <td>{{operacijeURadnomNalogu.cena}}</td>
+                <td>{{operacijeURadnomNalogu.skica}}</td>
+                <td>{{operacijeURadnomNalogu.datumIVremePocetka | date:'medium'}}</td>
+                <td>{{operacijeURadnomNalogu.datumIVremeZavrsetka | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="operacijeURadnomNalogu.radniNalog">
+                        <a [routerLink]="['../radni-nalog', operacijeURadnomNalogu.radniNalog?.id, 'view' ]" >{{operacijeURadnomNalogu.radniNalog?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/operacije-u-radnom-nalogu', operacijeURadnomNalogu.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/operacije-u-radnom-nalogu', operacijeURadnomNalogu.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'operacije-u-radnom-nalogu/'+ operacijeURadnomNalogu.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

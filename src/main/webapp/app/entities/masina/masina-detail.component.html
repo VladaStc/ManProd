@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="masina">
+            <h2><span jhiTranslate="manProdApp.masina.detail.title">Masina</span> {{masina.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.masina.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{masina.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.masina.lokacija">Lokacija</span></dt>
+                <dd>
+                    <span>{{masina.lokacija}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.masina.struktura">Struktura</span></dt>
+                <dd>
+                    <span>{{masina.struktura}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.masina.rukovodilac">Rukovodilac</span></dt>
+                <dd>
+                    <span>{{masina.rukovodilac}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.masina.napomena">Napomena</span></dt>
+                <dd>
+                    <span>{{masina.napomena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.masina.obradniSistem">Obradni Sistem</span></dt>
+                <dd>
+                    <div *ngIf="masina.obradniSistem">
+                        <a [routerLink]="['/obradni-sistem', masina.obradniSistem?.id, 'view']">{{masina.obradniSistem?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.masina.operacijeURadnomNalogu">Operacije U Radnom Nalogu</span></dt>
+                <dd>
+                    <div *ngIf="masina.operacijeURadnomNalogu">
+                        <a [routerLink]="['/operacije-u-radnom-nalogu', masina.operacijeURadnomNalogu?.id, 'view']">{{masina.operacijeURadnomNalogu?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.masina.operacije">Operacije</span></dt>
+                <dd>
+                    <div *ngIf="masina.operacije">
+                        <a [routerLink]="['/operacije', masina.operacije?.id, 'view']">{{masina.operacije?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.masina.zahvati">Zahvati</span></dt>
+                <dd>
+                    <div *ngIf="masina.zahvati">
+                        <a [routerLink]="['/zahvati', masina.zahvati?.id, 'view']">{{masina.zahvati?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/masina', masina.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

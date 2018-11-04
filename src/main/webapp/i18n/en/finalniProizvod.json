@@ -1,0 +1,26 @@
+{
+    "manProdApp": {
+        "finalniProizvod": {
+            "home": {
+                "title": "Finalni Proizvods",
+                "createLabel": "Create a new Finalni Proizvod",
+                "createOrEditLabel": "Create or edit a Finalni Proizvod"
+            },
+            "created": "A new Finalni Proizvod is created with identifier {{ param }}",
+            "updated": "A Finalni Proizvod is updated with identifier {{ param }}",
+            "deleted": "A Finalni Proizvod is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Finalni Proizvod {{ id }}?"
+            },
+            "detail": {
+                "title": "Finalni Proizvod"
+            },
+            "naziv": "Naziv",
+            "vrsta": "Vrsta",
+            "jedMere": "Jed Mere",
+            "namena": "Namena",
+            "cena": "Cena",
+            "napomena": "Napomena"
+        }
+    }
+}

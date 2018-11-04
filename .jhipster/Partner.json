@@ -1,0 +1,96 @@
+{
+    "name": "Partner",
+    "fields": [
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lokacija",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "finalniProizvod",
+            "otherEntityName": "finalniProizvod",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "partner"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "poluproizvod",
+            "otherEntityName": "poluproizvod",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "partner"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "kupovniProizvod",
+            "otherEntityName": "kupovniProizvod",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "partner"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "pomocniProizvod",
+            "otherEntityName": "pomocniProizvod",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "partner"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "sirovine",
+            "otherEntityName": "sirovine",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "partner"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "kupovniMaterijal",
+            "otherEntityName": "kupovniMaterijal",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "partner"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "komponente",
+            "otherEntityName": "komponenete",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "partner"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "potrosniMaterijal",
+            "otherEntityName": "potrosniMaterijal",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "partner"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "ostaliMaterijali",
+            "otherEntityName": "ostaliMaterijali",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "partner"
+        }
+    ],
+    "changelogDate": "20181104012430",
+    "entityTableName": "partner",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,28 @@
+{
+    "manProdApp": {
+        "operacijeURadnomNalogu": {
+            "home": {
+                "title": "Operacije U Radnom Nalogus",
+                "createLabel": "Kreiraj novi Operacije U Radnom Nalogu",
+                "createOrEditLabel": "Kreirajte ili izmenite Operacije U Radnom Nalogu"
+            },
+            "created": "Kreiran je novi Operacije U Radnom Nalogu pod nazivom {{ param }}",
+            "updated": "Operacije U Radnom Nalogu pod nazivom {{ param }} je ažuriran",
+            "deleted": "Operacije U Radnom Nalogu pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Operacije U Radnom Nalogu pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Operacije U Radnom Nalogu"
+            },
+            "naziv": "Naziv",
+            "vremeRada": "Vreme Rada",
+            "pripremnoZavrsnoVreme": "Pripremno Zavrsno Vreme",
+            "cena": "Cena",
+            "skica": "Skica",
+            "datumIVremePocetka": "Datum I Vreme Pocetka",
+            "datumIVremeZavrsetka": "Datum I Vreme Zavrsetka",
+            "radniNalog": "Radni Nalog"
+        }
+    }
+}

@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="alati">
+            <h2><span jhiTranslate="manProdApp.alati.detail.title">Alati</span> {{alati.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.alati.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{alati.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.alati.vrsta">Vrsta</span></dt>
+                <dd>
+                    <span>{{alati.vrsta}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.alati.jedMere">Jed Mere</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'manProdApp.JedMere.' + alati.jedMere}}">{{alati.jedMere}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.alati.namena">Namena</span></dt>
+                <dd>
+                    <span>{{alati.namena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.alati.cena">Cena</span></dt>
+                <dd>
+                    <span>{{alati.cena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.alati.trajanje">Trajanje</span></dt>
+                <dd>
+                    <span>{{alati.trajanje}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.alati.zahvati">Zahvati</span></dt>
+                <dd>
+                    <div *ngIf="alati.zahvati">
+                        <a [routerLink]="['/zahvati', alati.zahvati?.id, 'view']">{{alati.zahvati?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/alati', alati.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="proizvodneLinije">
+            <h2><span jhiTranslate="manProdApp.proizvodneLinije.detail.title">Proizvodne Linije</span> {{proizvodneLinije.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.proizvodneLinije.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{proizvodneLinije.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.proizvodneLinije.lokacija">Lokacija</span></dt>
+                <dd>
+                    <span>{{proizvodneLinije.lokacija}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.proizvodneLinije.povrsina">Povrsina</span></dt>
+                <dd>
+                    <span>{{proizvodneLinije.povrsina}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.proizvodneLinije.rukovodilac">Rukovodilac</span></dt>
+                <dd>
+                    <span>{{proizvodneLinije.rukovodilac}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.proizvodneLinije.napomena">Napomena</span></dt>
+                <dd>
+                    <span>{{proizvodneLinije.napomena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.proizvodneLinije.odelenje">Odelenje</span></dt>
+                <dd>
+                    <div *ngIf="proizvodneLinije.odelenje">
+                        <a [routerLink]="['/odelenje', proizvodneLinije.odelenje?.id, 'view']">{{proizvodneLinije.odelenje?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.proizvodneLinije.obradniSistem">Obradni Sistem</span></dt>
+                <dd>
+                    <div *ngIf="proizvodneLinije.obradniSistem">
+                        <a [routerLink]="['/obradni-sistem', proizvodneLinije.obradniSistem?.id, 'view']">{{proizvodneLinije.obradniSistem?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/proizvodne-linije', proizvodneLinije.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-radnici-heading" jhiTranslate="manProdApp.radnici.home.createOrEditLabel">Create or edit a Radnici</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!radnici.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="radnici.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.radnici.ime" for="field_ime">Ime</label>
+                    <input type="text" class="form-control" name="ime" id="field_ime"
+                        [(ngModel)]="radnici.ime" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.radnici.prezime" for="field_prezime">Prezime</label>
+                    <input type="text" class="form-control" name="prezime" id="field_prezime"
+                        [(ngModel)]="radnici.prezime" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.radnici.jmbg" for="field_jmbg">Jmbg</label>
+                    <input type="number" class="form-control" name="jmbg" id="field_jmbg"
+                        [(ngModel)]="radnici.jmbg" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.radnici.kvalifikacija" for="field_kvalifikacija">Kvalifikacija</label>
+                    <input type="text" class="form-control" name="kvalifikacija" id="field_kvalifikacija"
+                        [(ngModel)]="radnici.kvalifikacija" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.radnici.koeficijent" for="field_koeficijent">Koeficijent</label>
+                    <input type="number" class="form-control" name="koeficijent" id="field_koeficijent"
+                        [(ngModel)]="radnici.koeficijent" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.radnici.sertifikat" for="field_sertifikat">Sertifikat</label>
+                    <input type="text" class="form-control" name="sertifikat" id="field_sertifikat"
+                        [(ngModel)]="radnici.sertifikat" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.radnici.pol" for="field_pol">Pol</label>
+                    <input type="text" class="form-control" name="pol" id="field_pol"
+                        [(ngModel)]="radnici.pol" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.radnici.napomena" for="field_napomena">Napomena</label>
+                    <input type="text" class="form-control" name="napomena" id="field_napomena"
+                        [(ngModel)]="radnici.napomena" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.radnici.tipRadnika" for="field_tipRadnika">Tip Radnika</label>
+                    <select class="form-control" name="tipRadnika" [(ngModel)]="radnici.tipRadnika" id="field_tipRadnika" >
+                        <option value="SOPSTVENI">{{'manProdApp.TipRadnika.SOPSTVENI' | translate}}</option>
+                        <option value="ANGAZOVANI">{{'manProdApp.TipRadnika.ANGAZOVANI' | translate}}</option>
+                        <option value="POMOCNI">{{'manProdApp.TipRadnika.POMOCNI' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.radnici.operacijeURadnomNalogu" for="field_operacijeURadnomNalogu">Operacije U Radnom Nalogu</label>
+                    <select class="form-control" id="field_operacijeURadnomNalogu" name="operacijeURadnomNalogu" [(ngModel)]="radnici.operacijeURadnomNalogu">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="operacijeURadnomNaloguOption.id === radnici.operacijeURadnomNalogu?.id ? radnici.operacijeURadnomNalogu : operacijeURadnomNaloguOption" *ngFor="let operacijeURadnomNaloguOption of operacijeuradnomnalogus; trackBy: trackOperacijeURadnomNaloguById">{{operacijeURadnomNaloguOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.radnici.operacije" for="field_operacije">Operacije</label>
+                    <select class="form-control" id="field_operacije" name="operacije" [(ngModel)]="radnici.operacije">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="operacijeOption.id === radnici.operacije?.id ? radnici.operacije : operacijeOption" *ngFor="let operacijeOption of operacijes; trackBy: trackOperacijeById">{{operacijeOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.radnici.zahvati" for="field_zahvati">Zahvati</label>
+                    <select class="form-control" id="field_zahvati" name="zahvati" [(ngModel)]="radnici.zahvati">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="zahvatiOption.id === radnici.zahvati?.id ? radnici.zahvati : zahvatiOption" *ngFor="let zahvatiOption of zahvatis; trackBy: trackZahvatiById">{{zahvatiOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

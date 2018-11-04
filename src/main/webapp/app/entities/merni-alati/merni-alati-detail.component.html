@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="merniAlati">
+            <h2><span jhiTranslate="manProdApp.merniAlati.detail.title">Merni Alati</span> {{merniAlati.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.merniAlati.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{merniAlati.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.merniAlati.vrsta">Vrsta</span></dt>
+                <dd>
+                    <span>{{merniAlati.vrsta}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.merniAlati.jedMere">Jed Mere</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'manProdApp.JedMere.' + merniAlati.jedMere}}">{{merniAlati.jedMere}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.merniAlati.namena">Namena</span></dt>
+                <dd>
+                    <span>{{merniAlati.namena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.merniAlati.cena">Cena</span></dt>
+                <dd>
+                    <span>{{merniAlati.cena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.merniAlati.trajanje">Trajanje</span></dt>
+                <dd>
+                    <span>{{merniAlati.trajanje}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.merniAlati.bazdarenje">Bazdarenje</span></dt>
+                <dd>
+                    <span>{{merniAlati.bazdarenje}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/merni-alati', merniAlati.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

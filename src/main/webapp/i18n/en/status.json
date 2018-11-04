@@ -1,0 +1,10 @@
+{
+    "manProdApp": {
+        "Status": {
+            "null": "",
+            "OTVOREN": "OTVOREN",
+            "AKTIVAN": "AKTIVAN",
+            "ZATVOREN": "ZATVOREN"
+        }
+    }
+}

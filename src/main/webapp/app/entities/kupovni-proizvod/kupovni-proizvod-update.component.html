@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-kupovni-proizvod-heading" jhiTranslate="manProdApp.kupovniProizvod.home.createOrEditLabel">Create or edit a Kupovni Proizvod</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!kupovniProizvod.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="kupovniProizvod.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.kupovniProizvod.naziv" for="field_naziv">Naziv</label>
+                    <input type="text" class="form-control" name="naziv" id="field_naziv"
+                        [(ngModel)]="kupovniProizvod.naziv" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.kupovniProizvod.vrsta" for="field_vrsta">Vrsta</label>
+                    <input type="text" class="form-control" name="vrsta" id="field_vrsta"
+                        [(ngModel)]="kupovniProizvod.vrsta" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.kupovniProizvod.jedMere" for="field_jedMere">Jed Mere</label>
+                    <select class="form-control" name="jedMere" [(ngModel)]="kupovniProizvod.jedMere" id="field_jedMere" >
+                        <option value="KOM">{{'manProdApp.JedMere.KOM' | translate}}</option>
+                        <option value="KG">{{'manProdApp.JedMere.KG' | translate}}</option>
+                        <option value="L">{{'manProdApp.JedMere.L' | translate}}</option>
+                        <option value="M2">{{'manProdApp.JedMere.M2' | translate}}</option>
+                        <option value="M3">{{'manProdApp.JedMere.M3' | translate}}</option>
+                        <option value="TABLA">{{'manProdApp.JedMere.TABLA' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.kupovniProizvod.namena" for="field_namena">Namena</label>
+                    <input type="text" class="form-control" name="namena" id="field_namena"
+                        [(ngModel)]="kupovniProizvod.namena" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.kupovniProizvod.cena" for="field_cena">Cena</label>
+                    <input type="number" class="form-control" name="cena" id="field_cena"
+                        [(ngModel)]="kupovniProizvod.cena" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.kupovniProizvod.napomena" for="field_napomena">Napomena</label>
+                    <input type="text" class="form-control" name="napomena" id="field_napomena"
+                        [(ngModel)]="kupovniProizvod.napomena" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

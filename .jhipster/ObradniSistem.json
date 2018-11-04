@@ -1,0 +1,56 @@
+{
+    "name": "ObradniSistem",
+    "fields": [
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lokacija",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "struktura",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rukovodilac",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "napomena",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "konstruktivnaSastavnica",
+            "otherEntityName": "konstruktivnaSastavnica",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "obradniSistem"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "masina",
+            "otherEntityName": "masina",
+            "otherEntityRelationshipName": "obradniSistem"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "oprema",
+            "otherEntityName": "oprema",
+            "otherEntityRelationshipName": "obradniSistem"
+        }
+    ],
+    "changelogDate": "20181104012420",
+    "entityTableName": "obradni_sistem",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

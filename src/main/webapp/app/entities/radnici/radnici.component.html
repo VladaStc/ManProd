@@ -1,0 +1,96 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="manProdApp.radnici.home.title">Radnicis</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-radnici" [routerLink]="['/radnici/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="manProdApp.radnici.home.createLabel">
+            Create new Radnici
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="radnicis">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="ime"><span jhiTranslate="manProdApp.radnici.ime">Ime</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="prezime"><span jhiTranslate="manProdApp.radnici.prezime">Prezime</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="jmbg"><span jhiTranslate="manProdApp.radnici.jmbg">Jmbg</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="kvalifikacija"><span jhiTranslate="manProdApp.radnici.kvalifikacija">Kvalifikacija</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="koeficijent"><span jhiTranslate="manProdApp.radnici.koeficijent">Koeficijent</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sertifikat"><span jhiTranslate="manProdApp.radnici.sertifikat">Sertifikat</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="pol"><span jhiTranslate="manProdApp.radnici.pol">Pol</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="napomena"><span jhiTranslate="manProdApp.radnici.napomena">Napomena</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tipRadnika"><span jhiTranslate="manProdApp.radnici.tipRadnika">Tip Radnika</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="operacijeURadnomNalogu.id"><span jhiTranslate="manProdApp.radnici.operacijeURadnomNalogu">Operacije U Radnom Nalogu</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="operacije.id"><span jhiTranslate="manProdApp.radnici.operacije">Operacije</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="zahvati.id"><span jhiTranslate="manProdApp.radnici.zahvati">Zahvati</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let radnici of radnicis ;trackBy: trackId">
+                <td><a [routerLink]="['/radnici', radnici.id, 'view' ]">{{radnici.id}}</a></td>
+                <td>{{radnici.ime}}</td>
+                <td>{{radnici.prezime}}</td>
+                <td>{{radnici.jmbg}}</td>
+                <td>{{radnici.kvalifikacija}}</td>
+                <td>{{radnici.koeficijent}}</td>
+                <td>{{radnici.sertifikat}}</td>
+                <td>{{radnici.pol}}</td>
+                <td>{{radnici.napomena}}</td>
+                <td jhiTranslate="{{'manProdApp.TipRadnika.' + radnici.tipRadnika}}">{{radnici.tipRadnika}}</td>
+                <td>
+                    <div *ngIf="radnici.operacijeURadnomNalogu">
+                        <a [routerLink]="['../operacije-u-radnom-nalogu', radnici.operacijeURadnomNalogu?.id, 'view' ]" >{{radnici.operacijeURadnomNalogu?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="radnici.operacije">
+                        <a [routerLink]="['../operacije', radnici.operacije?.id, 'view' ]" >{{radnici.operacije?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="radnici.zahvati">
+                        <a [routerLink]="['../zahvati', radnici.zahvati?.id, 'view' ]" >{{radnici.zahvati?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/radnici', radnici.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/radnici', radnici.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'radnici/'+ radnici.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="radnicis && radnicis.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

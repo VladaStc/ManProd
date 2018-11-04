@@ -1,0 +1,28 @@
+{
+    "manProdApp": {
+        "pomocniMaterijal": {
+            "home": {
+                "title": "Pomocni Materijals",
+                "createLabel": "Kreiraj novi Pomocni Materijal",
+                "createOrEditLabel": "Kreirajte ili izmenite Pomocni Materijal"
+            },
+            "created": "Kreiran je novi Pomocni Materijal pod nazivom {{ param }}",
+            "updated": "Pomocni Materijal pod nazivom {{ param }} je ažuriran",
+            "deleted": "Pomocni Materijal pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Pomocni Materijal pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Pomocni Materijal"
+            },
+            "sifra": "Sifra",
+            "naziv": "Naziv",
+            "vrsta": "Vrsta",
+            "jedMere": "Jed Mere",
+            "namena": "Namena",
+            "nabavnaCena": "Nabavna Cena",
+            "napomena": "Napomena",
+            "zahvati": "Zahvati"
+        }
+    }
+}

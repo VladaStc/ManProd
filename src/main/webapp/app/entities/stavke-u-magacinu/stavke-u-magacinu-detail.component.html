@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="stavkeUMagacinu">
+            <h2><span jhiTranslate="manProdApp.stavkeUMagacinu.detail.title">Stavke U Magacinu</span> {{stavkeUMagacinu.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.stavkeUMagacinu.stanje">Stanje</span></dt>
+                <dd>
+                    <span>{{stavkeUMagacinu.stanje}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.stavkeUMagacinu.tipMagacina">Tip Magacina</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'manProdApp.TipMagacina.' + stavkeUMagacinu.tipMagacina}}">{{stavkeUMagacinu.tipMagacina}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/stavke-u-magacinu', stavkeUMagacinu.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

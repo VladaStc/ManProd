@@ -1,0 +1,77 @@
+{
+    "name": "Radnici",
+    "fields": [
+        {
+            "fieldName": "ime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prezime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jmbg",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "kvalifikacija",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "koeficijent",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "sertifikat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pol",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "napomena",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipRadnika",
+            "fieldType": "TipRadnika",
+            "fieldValues": "SOPSTVENI,ANGAZOVANI,POMOCNI"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "operacijeURadnomNalogu",
+            "otherEntityName": "operacijeURadnomNalogu",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "radnici"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "operacije",
+            "otherEntityName": "operacije",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "radnici"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "zahvati",
+            "otherEntityName": "zahvati",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "radnici"
+        }
+    ],
+    "changelogDate": "20181104012442",
+    "entityTableName": "radnici",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

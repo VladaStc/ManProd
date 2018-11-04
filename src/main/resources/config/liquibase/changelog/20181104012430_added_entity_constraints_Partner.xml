@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Partner.
+    -->
+    <changeSet id="20181104012430-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="finalni_proizvod_id"
+                                 baseTableName="partner"
+                                 constraintName="fk_partner_finalni_proizvod_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="finalni_proizvod"/>
+
+        <addForeignKeyConstraint baseColumnNames="poluproizvod_id"
+                                 baseTableName="partner"
+                                 constraintName="fk_partner_poluproizvod_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="poluproizvod"/>
+
+        <addForeignKeyConstraint baseColumnNames="kupovni_proizvod_id"
+                                 baseTableName="partner"
+                                 constraintName="fk_partner_kupovni_proizvod_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="kupovni_proizvod"/>
+
+        <addForeignKeyConstraint baseColumnNames="pomocni_proizvod_id"
+                                 baseTableName="partner"
+                                 constraintName="fk_partner_pomocni_proizvod_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pomocni_proizvod"/>
+
+        <addForeignKeyConstraint baseColumnNames="sirovine_id"
+                                 baseTableName="partner"
+                                 constraintName="fk_partner_sirovine_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sirovine"/>
+
+        <addForeignKeyConstraint baseColumnNames="kupovni_materijal_id"
+                                 baseTableName="partner"
+                                 constraintName="fk_partner_kupovni_materijal_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="kupovni_materijal"/>
+
+        <addForeignKeyConstraint baseColumnNames="komponente_id"
+                                 baseTableName="partner"
+                                 constraintName="fk_partner_komponente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="komponenete"/>
+
+        <addForeignKeyConstraint baseColumnNames="potrosni_materijal_id"
+                                 baseTableName="partner"
+                                 constraintName="fk_partner_potrosni_materijal_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="potrosni_materijal"/>
+
+        <addForeignKeyConstraint baseColumnNames="ostali_materijali_id"
+                                 baseTableName="partner"
+                                 constraintName="fk_partner_ostali_materijali_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ostali_materijali"/>
+
+    </changeSet>
+</databaseChangeLog>

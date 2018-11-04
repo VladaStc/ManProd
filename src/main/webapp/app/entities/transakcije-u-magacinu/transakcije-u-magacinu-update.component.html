@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-transakcije-u-magacinu-heading" jhiTranslate="manProdApp.transakcijeUMagacinu.home.createOrEditLabel">Create or edit a Transakcije U Magacinu</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!transakcijeUMagacinu.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="transakcijeUMagacinu.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.transakcijeUMagacinu.ulaz" for="field_ulaz">Ulaz</label>
+                    <input type="number" class="form-control" name="ulaz" id="field_ulaz"
+                        [(ngModel)]="transakcijeUMagacinu.ulaz" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.transakcijeUMagacinu.izlaz" for="field_izlaz">Izlaz</label>
+                    <input type="number" class="form-control" name="izlaz" id="field_izlaz"
+                        [(ngModel)]="transakcijeUMagacinu.izlaz" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.transakcijeUMagacinu.stanje" for="field_stanje">Stanje</label>
+                    <input type="number" class="form-control" name="stanje" id="field_stanje"
+                        [(ngModel)]="transakcijeUMagacinu.stanje" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.transakcijeUMagacinu.napomena" for="field_napomena">Napomena</label>
+                    <input type="text" class="form-control" name="napomena" id="field_napomena"
+                        [(ngModel)]="transakcijeUMagacinu.napomena" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.transakcijeUMagacinu.datum" for="field_datum">Datum</label>
+                    <div class="d-flex">
+                        <input id="field_datum" type="datetime-local" class="form-control" name="datum" [(ngModel)]="datum"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.transakcijeUMagacinu.tipMagacina" for="field_tipMagacina">Tip Magacina</label>
+                    <select class="form-control" name="tipMagacina" [(ngModel)]="transakcijeUMagacinu.tipMagacina" id="field_tipMagacina" >
+                        <option value="MAGACIN_SIROVINA">{{'manProdApp.TipMagacina.MAGACIN_SIROVINA' | translate}}</option>
+                        <option value="MAGACIN_GOTOVIH_PROIZVODA">{{'manProdApp.TipMagacina.MAGACIN_GOTOVIH_PROIZVODA' | translate}}</option>
+                        <option value="MAGACIN_PROIZVODNJE_U_TOKU">{{'manProdApp.TipMagacina.MAGACIN_PROIZVODNJE_U_TOKU' | translate}}</option>
+                    </select>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

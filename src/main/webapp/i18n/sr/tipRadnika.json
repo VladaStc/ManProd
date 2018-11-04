@@ -1,0 +1,10 @@
+{
+    "manProdApp": {
+        "TipRadnika": {
+            "null": "",
+            "SOPSTVENI": "SOPSTVENI",
+            "ANGAZOVANI": "ANGAZOVANI",
+            "POMOCNI": "POMOCNI"
+        }
+    }
+}

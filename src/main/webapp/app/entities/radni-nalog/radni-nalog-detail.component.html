@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="radniNalog">
+            <h2><span jhiTranslate="manProdApp.radniNalog.detail.title">Radni Nalog</span> {{radniNalog.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.radniNalog.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{radniNalog.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radniNalog.datumIVremeOtvaranja">Datum I Vreme Otvaranja</span></dt>
+                <dd>
+                    <span>{{radniNalog.datumIVremeOtvaranja}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radniNalog.datumIVremeZatvaranja">Datum I Vreme Zatvaranja</span></dt>
+                <dd>
+                    <span>{{radniNalog.datumIVremeZatvaranja}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radniNalog.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'manProdApp.Status.' + radniNalog.status}}">{{radniNalog.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radniNalog.nosilac">Nosilac</span></dt>
+                <dd>
+                    <span>{{radniNalog.nosilac}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radniNalog.cena">Cena</span></dt>
+                <dd>
+                    <span>{{radniNalog.cena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radniNalog.kolicina">Kolicina</span></dt>
+                <dd>
+                    <span>{{radniNalog.kolicina}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/radni-nalog', radniNalog.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

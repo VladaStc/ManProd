@@ -1,0 +1,27 @@
+{
+    "manProdApp": {
+        "kupovniMaterijal": {
+            "home": {
+                "title": "Kupovni Materijals",
+                "createLabel": "Create a new Kupovni Materijal",
+                "createOrEditLabel": "Create or edit a Kupovni Materijal"
+            },
+            "created": "A new Kupovni Materijal is created with identifier {{ param }}",
+            "updated": "A Kupovni Materijal is updated with identifier {{ param }}",
+            "deleted": "A Kupovni Materijal is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Kupovni Materijal {{ id }}?"
+            },
+            "detail": {
+                "title": "Kupovni Materijal"
+            },
+            "sifra": "Sifra",
+            "naziv": "Naziv",
+            "vrsta": "Vrsta",
+            "jedMere": "Jed Mere",
+            "namena": "Namena",
+            "nabavnaCena": "Nabavna Cena",
+            "napomena": "Napomena"
+        }
+    }
+}

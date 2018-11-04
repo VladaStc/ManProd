@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-operacije-heading" jhiTranslate="manProdApp.operacije.home.createOrEditLabel">Create or edit a Operacije</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!operacije.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="operacije.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.operacije.naziv" for="field_naziv">Naziv</label>
+                    <input type="text" class="form-control" name="naziv" id="field_naziv"
+                        [(ngModel)]="operacije.naziv" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.operacije.vremeRada" for="field_vremeRada">Vreme Rada</label>
+                    <input type="number" class="form-control" name="vremeRada" id="field_vremeRada"
+                        [(ngModel)]="operacije.vremeRada" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.operacije.pomocnoVreme" for="field_pomocnoVreme">Pomocno Vreme</label>
+                    <input type="number" class="form-control" name="pomocnoVreme" id="field_pomocnoVreme"
+                        [(ngModel)]="operacije.pomocnoVreme" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.operacije.cena" for="field_cena">Cena</label>
+                    <input type="number" class="form-control" name="cena" id="field_cena"
+                        [(ngModel)]="operacije.cena" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.operacije.skica" for="field_skica">Skica</label>
+                    <input type="text" class="form-control" name="skica" id="field_skica"
+                        [(ngModel)]="operacije.skica" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.operacije.zahvati" for="field_zahvati">Zahvati</label>
+                    <select class="form-control" id="field_zahvati" name="zahvati" [(ngModel)]="operacije.zahvati">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="zahvatiOption.id === operacije.zahvati?.id ? operacije.zahvati : zahvatiOption" *ngFor="let zahvatiOption of zahvatis; trackBy: trackZahvatiById">{{zahvatiOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

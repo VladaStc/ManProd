@@ -1,0 +1,49 @@
+{
+    "name": "Pribori",
+    "fields": [
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vrsta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jedMere",
+            "fieldType": "JedMere",
+            "fieldValues": "KOM,KG,L,M2,M3,TABLA"
+        },
+        {
+            "fieldName": "namena",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cena",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "trajanje",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "zahvati",
+            "otherEntityName": "zahvati",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "pribori"
+        }
+    ],
+    "changelogDate": "20181104012428",
+    "entityTableName": "pribori",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

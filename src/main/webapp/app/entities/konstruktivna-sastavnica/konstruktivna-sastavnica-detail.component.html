@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="konstruktivnaSastavnica">
+            <h2><span jhiTranslate="manProdApp.konstruktivnaSastavnica.detail.title">Konstruktivna Sastavnica</span> {{konstruktivnaSastavnica.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.konstruktivnaSastavnica.sifraDela">Sifra Dela</span></dt>
+                <dd>
+                    <span>{{konstruktivnaSastavnica.sifraDela}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.konstruktivnaSastavnica.nazivDela">Naziv Dela</span></dt>
+                <dd>
+                    <span>{{konstruktivnaSastavnica.nazivDela}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.konstruktivnaSastavnica.kolicina">Kolicina</span></dt>
+                <dd>
+                    <span>{{konstruktivnaSastavnica.kolicina}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/konstruktivna-sastavnica', konstruktivnaSastavnica.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

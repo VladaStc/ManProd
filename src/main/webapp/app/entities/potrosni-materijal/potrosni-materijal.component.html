@@ -1,0 +1,66 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="manProdApp.potrosniMaterijal.home.title">Potrosni Materijals</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-potrosni-materijal" [routerLink]="['/potrosni-materijal/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="manProdApp.potrosniMaterijal.home.createLabel">
+            Create new Potrosni Materijal
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="potrosniMaterijals">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="manProdApp.potrosniMaterijal.sifra">Sifra</span></th>
+            <th><span jhiTranslate="manProdApp.potrosniMaterijal.naziv">Naziv</span></th>
+            <th><span jhiTranslate="manProdApp.potrosniMaterijal.vrsta">Vrsta</span></th>
+            <th><span jhiTranslate="manProdApp.potrosniMaterijal.jedMere">Jed Mere</span></th>
+            <th><span jhiTranslate="manProdApp.potrosniMaterijal.namena">Namena</span></th>
+            <th><span jhiTranslate="manProdApp.potrosniMaterijal.nabavnaCena">Nabavna Cena</span></th>
+            <th><span jhiTranslate="manProdApp.potrosniMaterijal.napomena">Napomena</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let potrosniMaterijal of potrosniMaterijals ;trackBy: trackId">
+                <td><a [routerLink]="['/potrosni-materijal', potrosniMaterijal.id, 'view' ]">{{potrosniMaterijal.id}}</a></td>
+                <td>{{potrosniMaterijal.sifra}}</td>
+                <td>{{potrosniMaterijal.naziv}}</td>
+                <td>{{potrosniMaterijal.vrsta}}</td>
+                <td jhiTranslate="{{'manProdApp.JedMere.' + potrosniMaterijal.jedMere}}">{{potrosniMaterijal.jedMere}}</td>
+                <td>{{potrosniMaterijal.namena}}</td>
+                <td>{{potrosniMaterijal.nabavnaCena}}</td>
+                <td>{{potrosniMaterijal.napomena}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/potrosni-materijal', potrosniMaterijal.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/potrosni-materijal', potrosniMaterijal.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'potrosni-materijal/'+ potrosniMaterijal.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

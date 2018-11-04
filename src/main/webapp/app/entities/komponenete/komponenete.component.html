@@ -1,0 +1,66 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="manProdApp.komponenete.home.title">Komponenetes</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-komponenete" [routerLink]="['/komponenete/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="manProdApp.komponenete.home.createLabel">
+            Create new Komponenete
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="komponenetes">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="manProdApp.komponenete.sifra">Sifra</span></th>
+            <th><span jhiTranslate="manProdApp.komponenete.naziv">Naziv</span></th>
+            <th><span jhiTranslate="manProdApp.komponenete.vrsta">Vrsta</span></th>
+            <th><span jhiTranslate="manProdApp.komponenete.jedMere">Jed Mere</span></th>
+            <th><span jhiTranslate="manProdApp.komponenete.namena">Namena</span></th>
+            <th><span jhiTranslate="manProdApp.komponenete.nabavnaCena">Nabavna Cena</span></th>
+            <th><span jhiTranslate="manProdApp.komponenete.napomena">Napomena</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let komponenete of komponenetes ;trackBy: trackId">
+                <td><a [routerLink]="['/komponenete', komponenete.id, 'view' ]">{{komponenete.id}}</a></td>
+                <td>{{komponenete.sifra}}</td>
+                <td>{{komponenete.naziv}}</td>
+                <td>{{komponenete.vrsta}}</td>
+                <td jhiTranslate="{{'manProdApp.JedMere.' + komponenete.jedMere}}">{{komponenete.jedMere}}</td>
+                <td>{{komponenete.namena}}</td>
+                <td>{{komponenete.nabavnaCena}}</td>
+                <td>{{komponenete.napomena}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/komponenete', komponenete.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/komponenete', komponenete.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'komponenete/'+ komponenete.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

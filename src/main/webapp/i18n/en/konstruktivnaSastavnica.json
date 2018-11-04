@@ -1,0 +1,23 @@
+{
+    "manProdApp": {
+        "konstruktivnaSastavnica": {
+            "home": {
+                "title": "Konstruktivna Sastavnicas",
+                "createLabel": "Create a new Konstruktivna Sastavnica",
+                "createOrEditLabel": "Create or edit a Konstruktivna Sastavnica"
+            },
+            "created": "A new Konstruktivna Sastavnica is created with identifier {{ param }}",
+            "updated": "A Konstruktivna Sastavnica is updated with identifier {{ param }}",
+            "deleted": "A Konstruktivna Sastavnica is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Konstruktivna Sastavnica {{ id }}?"
+            },
+            "detail": {
+                "title": "Konstruktivna Sastavnica"
+            },
+            "sifraDela": "Sifra Dela",
+            "nazivDela": "Naziv Dela",
+            "kolicina": "Kolicina"
+        }
+    }
+}

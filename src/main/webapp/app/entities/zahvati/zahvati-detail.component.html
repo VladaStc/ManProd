@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="zahvati">
+            <h2><span jhiTranslate="manProdApp.zahvati.detail.title">Zahvati</span> {{zahvati.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.zahvati.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{zahvati.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.zahvati.vremeRada">Vreme Rada</span></dt>
+                <dd>
+                    <span>{{zahvati.vremeRada}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.zahvati.pomocnoVreme">Pomocno Vreme</span></dt>
+                <dd>
+                    <span>{{zahvati.pomocnoVreme}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.zahvati.cena">Cena</span></dt>
+                <dd>
+                    <span>{{zahvati.cena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.zahvati.skica">Skica</span></dt>
+                <dd>
+                    <span>{{zahvati.skica}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/zahvati', zahvati.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
