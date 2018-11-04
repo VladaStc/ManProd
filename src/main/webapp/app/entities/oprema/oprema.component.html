@@ -1,0 +1,68 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="manProdApp.oprema.home.title">Opremas</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-oprema" [routerLink]="['/oprema/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="manProdApp.oprema.home.createLabel">
+            Create new Oprema
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="opremas">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="manProdApp.oprema.naziv">Naziv</span></th>
+            <th><span jhiTranslate="manProdApp.oprema.lokacija">Lokacija</span></th>
+            <th><span jhiTranslate="manProdApp.oprema.struktura">Struktura</span></th>
+            <th><span jhiTranslate="manProdApp.oprema.rukovodilac">Rukovodilac</span></th>
+            <th><span jhiTranslate="manProdApp.oprema.napomena">Napomena</span></th>
+            <th><span jhiTranslate="manProdApp.oprema.obradniSistem">Obradni Sistem</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let oprema of opremas ;trackBy: trackId">
+                <td><a [routerLink]="['/oprema', oprema.id, 'view' ]">{{oprema.id}}</a></td>
+                <td>{{oprema.naziv}}</td>
+                <td>{{oprema.lokacija}}</td>
+                <td>{{oprema.struktura}}</td>
+                <td>{{oprema.rukovodilac}}</td>
+                <td>{{oprema.napomena}}</td>
+                <td>
+                    <div *ngIf="oprema.obradniSistem">
+                        <a [routerLink]="['../obradni-sistem', oprema.obradniSistem?.id, 'view' ]" >{{oprema.obradniSistem?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/oprema', oprema.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/oprema', oprema.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'oprema/'+ oprema.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

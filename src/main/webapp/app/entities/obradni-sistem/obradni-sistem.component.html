@@ -1,0 +1,68 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="manProdApp.obradniSistem.home.title">Obradni Sistems</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-obradni-sistem" [routerLink]="['/obradni-sistem/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="manProdApp.obradniSistem.home.createLabel">
+            Create new Obradni Sistem
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="obradniSistems">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="manProdApp.obradniSistem.naziv">Naziv</span></th>
+            <th><span jhiTranslate="manProdApp.obradniSistem.lokacija">Lokacija</span></th>
+            <th><span jhiTranslate="manProdApp.obradniSistem.struktura">Struktura</span></th>
+            <th><span jhiTranslate="manProdApp.obradniSistem.rukovodilac">Rukovodilac</span></th>
+            <th><span jhiTranslate="manProdApp.obradniSistem.napomena">Napomena</span></th>
+            <th><span jhiTranslate="manProdApp.obradniSistem.konstruktivnaSastavnica">Konstruktivna Sastavnica</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let obradniSistem of obradniSistems ;trackBy: trackId">
+                <td><a [routerLink]="['/obradni-sistem', obradniSistem.id, 'view' ]">{{obradniSistem.id}}</a></td>
+                <td>{{obradniSistem.naziv}}</td>
+                <td>{{obradniSistem.lokacija}}</td>
+                <td>{{obradniSistem.struktura}}</td>
+                <td>{{obradniSistem.rukovodilac}}</td>
+                <td>{{obradniSistem.napomena}}</td>
+                <td>
+                    <div *ngIf="obradniSistem.konstruktivnaSastavnica">
+                        <a [routerLink]="['../konstruktivna-sastavnica', obradniSistem.konstruktivnaSastavnica?.id, 'view' ]" >{{obradniSistem.konstruktivnaSastavnica?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/obradni-sistem', obradniSistem.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/obradni-sistem', obradniSistem.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'obradni-sistem/'+ obradniSistem.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

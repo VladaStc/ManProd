@@ -1,0 +1,29 @@
+{
+    "manProdApp": {
+        "radnoMesto": {
+            "home": {
+                "title": "Radno Mestos",
+                "createLabel": "Create a new Radno Mesto",
+                "createOrEditLabel": "Create or edit a Radno Mesto"
+            },
+            "created": "A new Radno Mesto is created with identifier {{ param }}",
+            "updated": "A Radno Mesto is updated with identifier {{ param }}",
+            "deleted": "A Radno Mesto is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Radno Mesto {{ id }}?"
+            },
+            "detail": {
+                "title": "Radno Mesto"
+            },
+            "naziv": "Naziv",
+            "lokacija": "Lokacija",
+            "povrsina": "Povrsina",
+            "rukovodilac": "Rukovodilac",
+            "normaSat": "Norma Sat",
+            "radnici": "Radnici",
+            "operacijeURadnomNalogu": "Operacije U Radnom Nalogu",
+            "operacije": "Operacije",
+            "zahvati": "Zahvati"
+        }
+    }
+}

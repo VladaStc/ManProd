@@ -1,0 +1,26 @@
+{
+    "manProdApp": {
+        "dobavljac": {
+            "home": {
+                "title": "Dobavljacs",
+                "createLabel": "Kreiraj novi Dobavljac",
+                "createOrEditLabel": "Kreirajte ili izmenite Dobavljac"
+            },
+            "created": "Kreiran je novi Dobavljac pod nazivom {{ param }}",
+            "updated": "Dobavljac pod nazivom {{ param }} je ažuriran",
+            "deleted": "Dobavljac pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Dobavljac pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Dobavljac"
+            },
+            "naziv": "Naziv",
+            "lokacija": "Lokacija",
+            "kolicina": "Kolicina",
+            "alati": "Alati",
+            "pribori": "Pribori",
+            "merniAlati": "Merni Alati"
+        }
+    }
+}

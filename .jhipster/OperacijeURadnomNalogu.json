@@ -1,0 +1,52 @@
+{
+    "name": "OperacijeURadnomNalogu",
+    "fields": [
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vremeRada",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "pripremnoZavrsnoVreme",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "cena",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "skica",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "datumIVremePocetka",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "datumIVremeZavrsetka",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "radniNalog",
+            "otherEntityName": "radniNalog",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "operacijeURadnomNalogu"
+        }
+    ],
+    "changelogDate": "20181104012444",
+    "entityTableName": "operacije_u_radnom_nalogu",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,52 @@
+{
+    "name": "ProizvodneLinije",
+    "fields": [
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lokacija",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "povrsina",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "rukovodilac",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "napomena",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "odelenje",
+            "otherEntityName": "odelenje",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "proizvodneLinije"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "obradniSistem",
+            "otherEntityName": "obradniSistem",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "proizvodneLinije"
+        }
+    ],
+    "changelogDate": "20181104012416",
+    "entityTableName": "proizvodne_linije",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

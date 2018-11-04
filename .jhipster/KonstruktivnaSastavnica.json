@@ -1,0 +1,27 @@
+{
+    "name": "KonstruktivnaSastavnica",
+    "fields": [
+        {
+            "fieldName": "sifraDela",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nazivDela",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "kolicina",
+            "fieldType": "Double"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181104012441",
+    "entityTableName": "konstruktivna_sastavnica",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

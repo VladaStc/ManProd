@@ -1,0 +1,26 @@
+{
+    "manProdApp": {
+        "operacije": {
+            "home": {
+                "title": "Operacijes",
+                "createLabel": "Kreiraj novi Operacije",
+                "createOrEditLabel": "Kreirajte ili izmenite Operacije"
+            },
+            "created": "Kreiran je novi Operacije pod nazivom {{ param }}",
+            "updated": "Operacije pod nazivom {{ param }} je ažuriran",
+            "deleted": "Operacije pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Operacije pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Operacije"
+            },
+            "naziv": "Naziv",
+            "vremeRada": "Vreme Rada",
+            "pomocnoVreme": "Pomocno Vreme",
+            "cena": "Cena",
+            "skica": "Skica",
+            "zahvati": "Zahvati"
+        }
+    }
+}

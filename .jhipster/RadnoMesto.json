@@ -1,0 +1,68 @@
+{
+    "name": "RadnoMesto",
+    "fields": [
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lokacija",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "povrsina",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "rukovodilac",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "normaSat",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "radnici",
+            "otherEntityName": "radnici",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "radnoMesto"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "operacijeURadnomNalogu",
+            "otherEntityName": "operacijeURadnomNalogu",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "radnoMesto"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "operacije",
+            "otherEntityName": "operacije",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "radnoMesto"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "zahvati",
+            "otherEntityName": "zahvati",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "radnoMesto"
+        }
+    ],
+    "changelogDate": "20181104012419",
+    "entityTableName": "radno_mesto",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

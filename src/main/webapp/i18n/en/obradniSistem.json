@@ -1,0 +1,28 @@
+{
+    "manProdApp": {
+        "obradniSistem": {
+            "home": {
+                "title": "Obradni Sistems",
+                "createLabel": "Create a new Obradni Sistem",
+                "createOrEditLabel": "Create or edit a Obradni Sistem"
+            },
+            "created": "A new Obradni Sistem is created with identifier {{ param }}",
+            "updated": "A Obradni Sistem is updated with identifier {{ param }}",
+            "deleted": "A Obradni Sistem is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Obradni Sistem {{ id }}?"
+            },
+            "detail": {
+                "title": "Obradni Sistem"
+            },
+            "naziv": "Naziv",
+            "lokacija": "Lokacija",
+            "struktura": "Struktura",
+            "rukovodilac": "Rukovodilac",
+            "napomena": "Napomena",
+            "konstruktivnaSastavnica": "Konstruktivna Sastavnica",
+            "masina": "Masina",
+            "oprema": "Oprema"
+        }
+    }
+}

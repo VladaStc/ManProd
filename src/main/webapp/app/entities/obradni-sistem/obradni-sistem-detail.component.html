@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="obradniSistem">
+            <h2><span jhiTranslate="manProdApp.obradniSistem.detail.title">Obradni Sistem</span> {{obradniSistem.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.obradniSistem.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{obradniSistem.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.obradniSistem.lokacija">Lokacija</span></dt>
+                <dd>
+                    <span>{{obradniSistem.lokacija}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.obradniSistem.struktura">Struktura</span></dt>
+                <dd>
+                    <span>{{obradniSistem.struktura}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.obradniSistem.rukovodilac">Rukovodilac</span></dt>
+                <dd>
+                    <span>{{obradniSistem.rukovodilac}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.obradniSistem.napomena">Napomena</span></dt>
+                <dd>
+                    <span>{{obradniSistem.napomena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.obradniSistem.konstruktivnaSastavnica">Konstruktivna Sastavnica</span></dt>
+                <dd>
+                    <div *ngIf="obradniSistem.konstruktivnaSastavnica">
+                        <a [routerLink]="['/konstruktivna-sastavnica', obradniSistem.konstruktivnaSastavnica?.id, 'view']">{{obradniSistem.konstruktivnaSastavnica?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/obradni-sistem', obradniSistem.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

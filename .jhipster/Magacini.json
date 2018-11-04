@@ -1,0 +1,161 @@
+{
+    "name": "Magacini",
+    "fields": [
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lokacija",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "namena",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rukovodilac",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "napomena",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipMagacina",
+            "fieldType": "TipMagacina",
+            "fieldValues": "MAGACIN_SIROVINA,MAGACIN_GOTOVIH_PROIZVODA,MAGACIN_PROIZVODNJE_U_TOKU"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "stavkeUMagacinu",
+            "otherEntityName": "stavkeUMagacinu",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "magacini"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "tansakcijeUMagacinu",
+            "otherEntityName": "transakcijeUMagacinu",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "magacini"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "alati",
+            "otherEntityName": "alati",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "magacini"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "pribori",
+            "otherEntityName": "pribori",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "magacini"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "merniAlati",
+            "otherEntityName": "merniAlati",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "magacini"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "finalniProizvod",
+            "otherEntityName": "finalniProizvod",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "magacini"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "poluproizvod",
+            "otherEntityName": "poluproizvod",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "magacini"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "kupovniProizvod",
+            "otherEntityName": "kupovniProizvod",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "magacini"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "pomocniProizvod",
+            "otherEntityName": "pomocniProizvod",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "magacini"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "sirovine",
+            "otherEntityName": "sirovine",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "magacini"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "kupovniMaterijal",
+            "otherEntityName": "kupovniMaterijal",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "magacini"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "komponente",
+            "otherEntityName": "komponenete",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "magacini"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "potrosniMaterijal",
+            "otherEntityName": "potrosniMaterijal",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "magacini"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "ostaliMaterijali",
+            "otherEntityName": "ostaliMaterijali",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "magacini"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "konstruktivnaSastavnica",
+            "otherEntityName": "konstruktivnaSastavnica",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "magacini"
+        }
+    ],
+    "changelogDate": "20181104012423",
+    "entityTableName": "magacini",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

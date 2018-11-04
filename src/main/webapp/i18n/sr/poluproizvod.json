@@ -1,0 +1,26 @@
+{
+    "manProdApp": {
+        "poluproizvod": {
+            "home": {
+                "title": "Poluproizvods",
+                "createLabel": "Kreiraj novi Poluproizvod",
+                "createOrEditLabel": "Kreirajte ili izmenite Poluproizvod"
+            },
+            "created": "Kreiran je novi Poluproizvod pod nazivom {{ param }}",
+            "updated": "Poluproizvod pod nazivom {{ param }} je ažuriran",
+            "deleted": "Poluproizvod pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Poluproizvod pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Poluproizvod"
+            },
+            "naziv": "Naziv",
+            "vrsta": "Vrsta",
+            "jedMere": "Jed Mere",
+            "namena": "Namena",
+            "cena": "Cena",
+            "napomena": "Napomena"
+        }
+    }
+}

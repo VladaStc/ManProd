@@ -1,0 +1,27 @@
+{
+    "manProdApp": {
+        "proizvodniPogoni": {
+            "home": {
+                "title": "Proizvodni Pogonis",
+                "createLabel": "Create a new Proizvodni Pogoni",
+                "createOrEditLabel": "Create or edit a Proizvodni Pogoni"
+            },
+            "created": "A new Proizvodni Pogoni is created with identifier {{ param }}",
+            "updated": "A Proizvodni Pogoni is updated with identifier {{ param }}",
+            "deleted": "A Proizvodni Pogoni is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Proizvodni Pogoni {{ id }}?"
+            },
+            "detail": {
+                "title": "Proizvodni Pogoni"
+            },
+            "naziv": "Naziv",
+            "lokacija": "Lokacija",
+            "povrsina": "Povrsina",
+            "rukovodilac": "Rukovodilac",
+            "napomena": "Napomena",
+            "proizvodneLinije": "Proizvodne Linije",
+            "obradniSistem": "Obradni Sistem"
+        }
+    }
+}

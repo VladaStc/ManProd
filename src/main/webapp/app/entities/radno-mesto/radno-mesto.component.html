@@ -1,0 +1,86 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="manProdApp.radnoMesto.home.title">Radno Mestos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-radno-mesto" [routerLink]="['/radno-mesto/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="manProdApp.radnoMesto.home.createLabel">
+            Create new Radno Mesto
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="radnoMestos">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="manProdApp.radnoMesto.naziv">Naziv</span></th>
+            <th><span jhiTranslate="manProdApp.radnoMesto.lokacija">Lokacija</span></th>
+            <th><span jhiTranslate="manProdApp.radnoMesto.povrsina">Povrsina</span></th>
+            <th><span jhiTranslate="manProdApp.radnoMesto.rukovodilac">Rukovodilac</span></th>
+            <th><span jhiTranslate="manProdApp.radnoMesto.normaSat">Norma Sat</span></th>
+            <th><span jhiTranslate="manProdApp.radnoMesto.radnici">Radnici</span></th>
+            <th><span jhiTranslate="manProdApp.radnoMesto.operacijeURadnomNalogu">Operacije U Radnom Nalogu</span></th>
+            <th><span jhiTranslate="manProdApp.radnoMesto.operacije">Operacije</span></th>
+            <th><span jhiTranslate="manProdApp.radnoMesto.zahvati">Zahvati</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let radnoMesto of radnoMestos ;trackBy: trackId">
+                <td><a [routerLink]="['/radno-mesto', radnoMesto.id, 'view' ]">{{radnoMesto.id}}</a></td>
+                <td>{{radnoMesto.naziv}}</td>
+                <td>{{radnoMesto.lokacija}}</td>
+                <td>{{radnoMesto.povrsina}}</td>
+                <td>{{radnoMesto.rukovodilac}}</td>
+                <td>{{radnoMesto.normaSat}}</td>
+                <td>
+                    <div *ngIf="radnoMesto.radnici">
+                        <a [routerLink]="['../radnici', radnoMesto.radnici?.id, 'view' ]" >{{radnoMesto.radnici?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="radnoMesto.operacijeURadnomNalogu">
+                        <a [routerLink]="['../operacije-u-radnom-nalogu', radnoMesto.operacijeURadnomNalogu?.id, 'view' ]" >{{radnoMesto.operacijeURadnomNalogu?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="radnoMesto.operacije">
+                        <a [routerLink]="['../operacije', radnoMesto.operacije?.id, 'view' ]" >{{radnoMesto.operacije?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="radnoMesto.zahvati">
+                        <a [routerLink]="['../zahvati', radnoMesto.zahvati?.id, 'view' ]" >{{radnoMesto.zahvati?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/radno-mesto', radnoMesto.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/radno-mesto', radnoMesto.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'radno-mesto/'+ radnoMesto.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

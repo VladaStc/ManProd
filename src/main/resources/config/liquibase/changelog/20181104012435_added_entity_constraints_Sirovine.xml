@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Sirovine.
+    -->
+    <changeSet id="20181104012435-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="operacijeuradnom_nalogu_id"
+                                 baseTableName="sirovine"
+                                 constraintName="fk_sirovine_operacijeuradnom_nalogu_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="operacije_u_radnom_nalogu"/>
+
+        <addForeignKeyConstraint baseColumnNames="operacije_id"
+                                 baseTableName="sirovine"
+                                 constraintName="fk_sirovine_operacije_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="operacije"/>
+
+        <addForeignKeyConstraint baseColumnNames="zahvati_id"
+                                 baseTableName="sirovine"
+                                 constraintName="fk_sirovine_zahvati_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="zahvati"/>
+
+    </changeSet>
+</databaseChangeLog>

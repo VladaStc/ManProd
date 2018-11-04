@@ -1,0 +1,137 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="magacini">
+            <h2><span jhiTranslate="manProdApp.magacini.detail.title">Magacini</span> {{magacini.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.magacini.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{magacini.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.lokacija">Lokacija</span></dt>
+                <dd>
+                    <span>{{magacini.lokacija}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.namena">Namena</span></dt>
+                <dd>
+                    <span>{{magacini.namena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.rukovodilac">Rukovodilac</span></dt>
+                <dd>
+                    <span>{{magacini.rukovodilac}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.napomena">Napomena</span></dt>
+                <dd>
+                    <span>{{magacini.napomena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.tipMagacina">Tip Magacina</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'manProdApp.TipMagacina.' + magacini.tipMagacina}}">{{magacini.tipMagacina}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.stavkeUMagacinu">Stavke U Magacinu</span></dt>
+                <dd>
+                    <div *ngIf="magacini.stavkeUMagacinu">
+                        <a [routerLink]="['/stavke-u-magacinu', magacini.stavkeUMagacinu?.id, 'view']">{{magacini.stavkeUMagacinu?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.tansakcijeUMagacinu">Tansakcije U Magacinu</span></dt>
+                <dd>
+                    <div *ngIf="magacini.tansakcijeUMagacinu">
+                        <a [routerLink]="['/transakcije-u-magacinu', magacini.tansakcijeUMagacinu?.id, 'view']">{{magacini.tansakcijeUMagacinu?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.alati">Alati</span></dt>
+                <dd>
+                    <div *ngIf="magacini.alati">
+                        <a [routerLink]="['/alati', magacini.alati?.id, 'view']">{{magacini.alati?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.pribori">Pribori</span></dt>
+                <dd>
+                    <div *ngIf="magacini.pribori">
+                        <a [routerLink]="['/pribori', magacini.pribori?.id, 'view']">{{magacini.pribori?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.merniAlati">Merni Alati</span></dt>
+                <dd>
+                    <div *ngIf="magacini.merniAlati">
+                        <a [routerLink]="['/merni-alati', magacini.merniAlati?.id, 'view']">{{magacini.merniAlati?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.finalniProizvod">Finalni Proizvod</span></dt>
+                <dd>
+                    <div *ngIf="magacini.finalniProizvod">
+                        <a [routerLink]="['/finalni-proizvod', magacini.finalniProizvod?.id, 'view']">{{magacini.finalniProizvod?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.poluproizvod">Poluproizvod</span></dt>
+                <dd>
+                    <div *ngIf="magacini.poluproizvod">
+                        <a [routerLink]="['/poluproizvod', magacini.poluproizvod?.id, 'view']">{{magacini.poluproizvod?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.kupovniProizvod">Kupovni Proizvod</span></dt>
+                <dd>
+                    <div *ngIf="magacini.kupovniProizvod">
+                        <a [routerLink]="['/kupovni-proizvod', magacini.kupovniProizvod?.id, 'view']">{{magacini.kupovniProizvod?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.pomocniProizvod">Pomocni Proizvod</span></dt>
+                <dd>
+                    <div *ngIf="magacini.pomocniProizvod">
+                        <a [routerLink]="['/pomocni-proizvod', magacini.pomocniProizvod?.id, 'view']">{{magacini.pomocniProizvod?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.sirovine">Sirovine</span></dt>
+                <dd>
+                    <div *ngIf="magacini.sirovine">
+                        <a [routerLink]="['/sirovine', magacini.sirovine?.id, 'view']">{{magacini.sirovine?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.kupovniMaterijal">Kupovni Materijal</span></dt>
+                <dd>
+                    <div *ngIf="magacini.kupovniMaterijal">
+                        <a [routerLink]="['/kupovni-materijal', magacini.kupovniMaterijal?.id, 'view']">{{magacini.kupovniMaterijal?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.komponente">Komponente</span></dt>
+                <dd>
+                    <div *ngIf="magacini.komponente">
+                        <a [routerLink]="['/komponenete', magacini.komponente?.id, 'view']">{{magacini.komponente?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.potrosniMaterijal">Potrosni Materijal</span></dt>
+                <dd>
+                    <div *ngIf="magacini.potrosniMaterijal">
+                        <a [routerLink]="['/potrosni-materijal', magacini.potrosniMaterijal?.id, 'view']">{{magacini.potrosniMaterijal?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.ostaliMaterijali">Ostali Materijali</span></dt>
+                <dd>
+                    <div *ngIf="magacini.ostaliMaterijali">
+                        <a [routerLink]="['/ostali-materijali', magacini.ostaliMaterijali?.id, 'view']">{{magacini.ostaliMaterijali?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.magacini.konstruktivnaSastavnica">Konstruktivna Sastavnica</span></dt>
+                <dd>
+                    <div *ngIf="magacini.konstruktivnaSastavnica">
+                        <a [routerLink]="['/konstruktivna-sastavnica', magacini.konstruktivnaSastavnica?.id, 'view']">{{magacini.konstruktivnaSastavnica?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/magacini', magacini.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

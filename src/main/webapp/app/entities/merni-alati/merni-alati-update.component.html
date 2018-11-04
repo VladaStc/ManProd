@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-merni-alati-heading" jhiTranslate="manProdApp.merniAlati.home.createOrEditLabel">Create or edit a Merni Alati</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!merniAlati.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="merniAlati.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.merniAlati.naziv" for="field_naziv">Naziv</label>
+                    <input type="text" class="form-control" name="naziv" id="field_naziv"
+                        [(ngModel)]="merniAlati.naziv" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.merniAlati.vrsta" for="field_vrsta">Vrsta</label>
+                    <input type="text" class="form-control" name="vrsta" id="field_vrsta"
+                        [(ngModel)]="merniAlati.vrsta" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.merniAlati.jedMere" for="field_jedMere">Jed Mere</label>
+                    <select class="form-control" name="jedMere" [(ngModel)]="merniAlati.jedMere" id="field_jedMere" >
+                        <option value="KOM">{{'manProdApp.JedMere.KOM' | translate}}</option>
+                        <option value="KG">{{'manProdApp.JedMere.KG' | translate}}</option>
+                        <option value="L">{{'manProdApp.JedMere.L' | translate}}</option>
+                        <option value="M2">{{'manProdApp.JedMere.M2' | translate}}</option>
+                        <option value="M3">{{'manProdApp.JedMere.M3' | translate}}</option>
+                        <option value="TABLA">{{'manProdApp.JedMere.TABLA' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.merniAlati.namena" for="field_namena">Namena</label>
+                    <input type="text" class="form-control" name="namena" id="field_namena"
+                        [(ngModel)]="merniAlati.namena" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.merniAlati.cena" for="field_cena">Cena</label>
+                    <input type="number" class="form-control" name="cena" id="field_cena"
+                        [(ngModel)]="merniAlati.cena" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.merniAlati.trajanje" for="field_trajanje">Trajanje</label>
+                    <div class="d-flex">
+                        <input id="field_trajanje" type="datetime-local" class="form-control" name="trajanje" [(ngModel)]="trajanje"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.merniAlati.bazdarenje" for="field_bazdarenje">Bazdarenje</label>
+                    <div class="d-flex">
+                        <input id="field_bazdarenje" type="datetime-local" class="form-control" name="bazdarenje" [(ngModel)]="bazdarenje"
+                        />
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

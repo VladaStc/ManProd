@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="kupovniMaterijal">
+            <h2><span jhiTranslate="manProdApp.kupovniMaterijal.detail.title">Kupovni Materijal</span> {{kupovniMaterijal.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.kupovniMaterijal.sifra">Sifra</span></dt>
+                <dd>
+                    <span>{{kupovniMaterijal.sifra}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.kupovniMaterijal.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{kupovniMaterijal.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.kupovniMaterijal.vrsta">Vrsta</span></dt>
+                <dd>
+                    <span>{{kupovniMaterijal.vrsta}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.kupovniMaterijal.jedMere">Jed Mere</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'manProdApp.JedMere.' + kupovniMaterijal.jedMere}}">{{kupovniMaterijal.jedMere}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.kupovniMaterijal.namena">Namena</span></dt>
+                <dd>
+                    <span>{{kupovniMaterijal.namena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.kupovniMaterijal.nabavnaCena">Nabavna Cena</span></dt>
+                <dd>
+                    <span>{{kupovniMaterijal.nabavnaCena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.kupovniMaterijal.napomena">Napomena</span></dt>
+                <dd>
+                    <span>{{kupovniMaterijal.napomena}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/kupovni-materijal', kupovniMaterijal.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

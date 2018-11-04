@@ -1,0 +1,26 @@
+{
+    "manProdApp": {
+        "pomocniProizvod": {
+            "home": {
+                "title": "Pomocni Proizvods",
+                "createLabel": "Create a new Pomocni Proizvod",
+                "createOrEditLabel": "Create or edit a Pomocni Proizvod"
+            },
+            "created": "A new Pomocni Proizvod is created with identifier {{ param }}",
+            "updated": "A Pomocni Proizvod is updated with identifier {{ param }}",
+            "deleted": "A Pomocni Proizvod is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Pomocni Proizvod {{ id }}?"
+            },
+            "detail": {
+                "title": "Pomocni Proizvod"
+            },
+            "naziv": "Naziv",
+            "vrsta": "Vrsta",
+            "jedMere": "Jed Mere",
+            "namena": "Namena",
+            "cena": "Cena",
+            "napomena": "Napomena"
+        }
+    }
+}

@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pribori">
+            <h2><span jhiTranslate="manProdApp.pribori.detail.title">Pribori</span> {{pribori.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.pribori.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{pribori.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.pribori.vrsta">Vrsta</span></dt>
+                <dd>
+                    <span>{{pribori.vrsta}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.pribori.jedMere">Jed Mere</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'manProdApp.JedMere.' + pribori.jedMere}}">{{pribori.jedMere}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.pribori.namena">Namena</span></dt>
+                <dd>
+                    <span>{{pribori.namena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.pribori.cena">Cena</span></dt>
+                <dd>
+                    <span>{{pribori.cena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.pribori.trajanje">Trajanje</span></dt>
+                <dd>
+                    <span>{{pribori.trajanje}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.pribori.zahvati">Zahvati</span></dt>
+                <dd>
+                    <div *ngIf="pribori.zahvati">
+                        <a [routerLink]="['/zahvati', pribori.zahvati?.id, 'view']">{{pribori.zahvati?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pribori', pribori.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

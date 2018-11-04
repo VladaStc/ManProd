@@ -1,0 +1,26 @@
+{
+    "manProdApp": {
+        "radionica": {
+            "home": {
+                "title": "Radionicas",
+                "createLabel": "Kreiraj novi Radionica",
+                "createOrEditLabel": "Kreirajte ili izmenite Radionica"
+            },
+            "created": "Kreiran je novi Radionica pod nazivom {{ param }}",
+            "updated": "Radionica pod nazivom {{ param }} je ažuriran",
+            "deleted": "Radionica pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Radionica pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Radionica"
+            },
+            "naziv": "Naziv",
+            "lokacija": "Lokacija",
+            "povrsina": "Povrsina",
+            "rukovodilac": "Rukovodilac",
+            "napomena": "Napomena",
+            "radnoMesto": "Radno Mesto"
+        }
+    }
+}

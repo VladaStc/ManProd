@@ -1,0 +1,26 @@
+{
+    "manProdApp": {
+        "kupovniProizvod": {
+            "home": {
+                "title": "Kupovni Proizvods",
+                "createLabel": "Create a new Kupovni Proizvod",
+                "createOrEditLabel": "Create or edit a Kupovni Proizvod"
+            },
+            "created": "A new Kupovni Proizvod is created with identifier {{ param }}",
+            "updated": "A Kupovni Proizvod is updated with identifier {{ param }}",
+            "deleted": "A Kupovni Proizvod is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Kupovni Proizvod {{ id }}?"
+            },
+            "detail": {
+                "title": "Kupovni Proizvod"
+            },
+            "naziv": "Naziv",
+            "vrsta": "Vrsta",
+            "jedMere": "Jed Mere",
+            "namena": "Namena",
+            "cena": "Cena",
+            "napomena": "Napomena"
+        }
+    }
+}

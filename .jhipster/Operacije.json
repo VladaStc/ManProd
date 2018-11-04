@@ -1,0 +1,44 @@
+{
+    "name": "Operacije",
+    "fields": [
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vremeRada",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "pomocnoVreme",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "cena",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "skica",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "zahvati",
+            "otherEntityName": "zahvati",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "operacije"
+        }
+    ],
+    "changelogDate": "20181104012445",
+    "entityTableName": "operacije",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

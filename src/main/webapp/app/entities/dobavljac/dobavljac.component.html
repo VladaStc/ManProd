@@ -1,0 +1,76 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="manProdApp.dobavljac.home.title">Dobavljacs</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-dobavljac" [routerLink]="['/dobavljac/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="manProdApp.dobavljac.home.createLabel">
+            Create new Dobavljac
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="dobavljacs">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="manProdApp.dobavljac.naziv">Naziv</span></th>
+            <th><span jhiTranslate="manProdApp.dobavljac.lokacija">Lokacija</span></th>
+            <th><span jhiTranslate="manProdApp.dobavljac.kolicina">Kolicina</span></th>
+            <th><span jhiTranslate="manProdApp.dobavljac.alati">Alati</span></th>
+            <th><span jhiTranslate="manProdApp.dobavljac.pribori">Pribori</span></th>
+            <th><span jhiTranslate="manProdApp.dobavljac.merniAlati">Merni Alati</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let dobavljac of dobavljacs ;trackBy: trackId">
+                <td><a [routerLink]="['/dobavljac', dobavljac.id, 'view' ]">{{dobavljac.id}}</a></td>
+                <td>{{dobavljac.naziv}}</td>
+                <td>{{dobavljac.lokacija}}</td>
+                <td>{{dobavljac.kolicina}}</td>
+                <td>
+                    <div *ngIf="dobavljac.alati">
+                        <a [routerLink]="['../alati', dobavljac.alati?.id, 'view' ]" >{{dobavljac.alati?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="dobavljac.pribori">
+                        <a [routerLink]="['../pribori', dobavljac.pribori?.id, 'view' ]" >{{dobavljac.pribori?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="dobavljac.merniAlati">
+                        <a [routerLink]="['../merni-alati', dobavljac.merniAlati?.id, 'view' ]" >{{dobavljac.merniAlati?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/dobavljac', dobavljac.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/dobavljac', dobavljac.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'dobavljac/'+ dobavljac.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

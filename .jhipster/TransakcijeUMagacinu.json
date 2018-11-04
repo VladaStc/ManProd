@@ -1,0 +1,40 @@
+{
+    "name": "TransakcijeUMagacinu",
+    "fields": [
+        {
+            "fieldName": "ulaz",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "izlaz",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "stanje",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "napomena",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "datum",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "tipMagacina",
+            "fieldType": "TipMagacina",
+            "fieldValues": "MAGACIN_SIROVINA,MAGACIN_GOTOVIH_PROIZVODA,MAGACIN_PROIZVODNJE_U_TOKU"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181104012425",
+    "entityTableName": "transakcije_u_magacinu",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

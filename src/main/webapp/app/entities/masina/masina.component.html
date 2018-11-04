@@ -1,0 +1,86 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="manProdApp.masina.home.title">Masinas</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-masina" [routerLink]="['/masina/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="manProdApp.masina.home.createLabel">
+            Create new Masina
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="masinas">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="manProdApp.masina.naziv">Naziv</span></th>
+            <th><span jhiTranslate="manProdApp.masina.lokacija">Lokacija</span></th>
+            <th><span jhiTranslate="manProdApp.masina.struktura">Struktura</span></th>
+            <th><span jhiTranslate="manProdApp.masina.rukovodilac">Rukovodilac</span></th>
+            <th><span jhiTranslate="manProdApp.masina.napomena">Napomena</span></th>
+            <th><span jhiTranslate="manProdApp.masina.obradniSistem">Obradni Sistem</span></th>
+            <th><span jhiTranslate="manProdApp.masina.operacijeURadnomNalogu">Operacije U Radnom Nalogu</span></th>
+            <th><span jhiTranslate="manProdApp.masina.operacije">Operacije</span></th>
+            <th><span jhiTranslate="manProdApp.masina.zahvati">Zahvati</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let masina of masinas ;trackBy: trackId">
+                <td><a [routerLink]="['/masina', masina.id, 'view' ]">{{masina.id}}</a></td>
+                <td>{{masina.naziv}}</td>
+                <td>{{masina.lokacija}}</td>
+                <td>{{masina.struktura}}</td>
+                <td>{{masina.rukovodilac}}</td>
+                <td>{{masina.napomena}}</td>
+                <td>
+                    <div *ngIf="masina.obradniSistem">
+                        <a [routerLink]="['../obradni-sistem', masina.obradniSistem?.id, 'view' ]" >{{masina.obradniSistem?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="masina.operacijeURadnomNalogu">
+                        <a [routerLink]="['../operacije-u-radnom-nalogu', masina.operacijeURadnomNalogu?.id, 'view' ]" >{{masina.operacijeURadnomNalogu?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="masina.operacije">
+                        <a [routerLink]="['../operacije', masina.operacije?.id, 'view' ]" >{{masina.operacije?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="masina.zahvati">
+                        <a [routerLink]="['../zahvati', masina.zahvati?.id, 'view' ]" >{{masina.zahvati?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/masina', masina.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/masina', masina.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'masina/'+ masina.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

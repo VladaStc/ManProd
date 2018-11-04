@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="potrosniMaterijal">
+            <h2><span jhiTranslate="manProdApp.potrosniMaterijal.detail.title">Potrosni Materijal</span> {{potrosniMaterijal.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.potrosniMaterijal.sifra">Sifra</span></dt>
+                <dd>
+                    <span>{{potrosniMaterijal.sifra}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.potrosniMaterijal.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{potrosniMaterijal.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.potrosniMaterijal.vrsta">Vrsta</span></dt>
+                <dd>
+                    <span>{{potrosniMaterijal.vrsta}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.potrosniMaterijal.jedMere">Jed Mere</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'manProdApp.JedMere.' + potrosniMaterijal.jedMere}}">{{potrosniMaterijal.jedMere}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.potrosniMaterijal.namena">Namena</span></dt>
+                <dd>
+                    <span>{{potrosniMaterijal.namena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.potrosniMaterijal.nabavnaCena">Nabavna Cena</span></dt>
+                <dd>
+                    <span>{{potrosniMaterijal.nabavnaCena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.potrosniMaterijal.napomena">Napomena</span></dt>
+                <dd>
+                    <span>{{potrosniMaterijal.napomena}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/potrosni-materijal', potrosniMaterijal.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

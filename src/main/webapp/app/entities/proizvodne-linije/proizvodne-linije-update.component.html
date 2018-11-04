@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-proizvodne-linije-heading" jhiTranslate="manProdApp.proizvodneLinije.home.createOrEditLabel">Create or edit a Proizvodne Linije</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!proizvodneLinije.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="proizvodneLinije.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.proizvodneLinije.naziv" for="field_naziv">Naziv</label>
+                    <input type="text" class="form-control" name="naziv" id="field_naziv"
+                        [(ngModel)]="proizvodneLinije.naziv" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.proizvodneLinije.lokacija" for="field_lokacija">Lokacija</label>
+                    <input type="text" class="form-control" name="lokacija" id="field_lokacija"
+                        [(ngModel)]="proizvodneLinije.lokacija" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.proizvodneLinije.povrsina" for="field_povrsina">Povrsina</label>
+                    <input type="number" class="form-control" name="povrsina" id="field_povrsina"
+                        [(ngModel)]="proizvodneLinije.povrsina" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.proizvodneLinije.rukovodilac" for="field_rukovodilac">Rukovodilac</label>
+                    <input type="text" class="form-control" name="rukovodilac" id="field_rukovodilac"
+                        [(ngModel)]="proizvodneLinije.rukovodilac" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.proizvodneLinije.napomena" for="field_napomena">Napomena</label>
+                    <input type="text" class="form-control" name="napomena" id="field_napomena"
+                        [(ngModel)]="proizvodneLinije.napomena" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.proizvodneLinije.odelenje" for="field_odelenje">Odelenje</label>
+                    <select class="form-control" id="field_odelenje" name="odelenje" [(ngModel)]="proizvodneLinije.odelenje">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="odelenjeOption.id === proizvodneLinije.odelenje?.id ? proizvodneLinije.odelenje : odelenjeOption" *ngFor="let odelenjeOption of odelenjes; trackBy: trackOdelenjeById">{{odelenjeOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.proizvodneLinije.obradniSistem" for="field_obradniSistem">Obradni Sistem</label>
+                    <select class="form-control" id="field_obradniSistem" name="obradniSistem" [(ngModel)]="proizvodneLinije.obradniSistem">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="obradniSistemOption.id === proizvodneLinije.obradniSistem?.id ? proizvodneLinije.obradniSistem : obradniSistemOption" *ngFor="let obradniSistemOption of obradnisistems; trackBy: trackObradniSistemById">{{obradniSistemOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

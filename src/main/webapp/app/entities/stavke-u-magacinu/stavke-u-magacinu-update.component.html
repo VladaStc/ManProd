@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-stavke-u-magacinu-heading" jhiTranslate="manProdApp.stavkeUMagacinu.home.createOrEditLabel">Create or edit a Stavke U Magacinu</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!stavkeUMagacinu.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="stavkeUMagacinu.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.stavkeUMagacinu.stanje" for="field_stanje">Stanje</label>
+                    <input type="number" class="form-control" name="stanje" id="field_stanje"
+                        [(ngModel)]="stavkeUMagacinu.stanje" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.stavkeUMagacinu.tipMagacina" for="field_tipMagacina">Tip Magacina</label>
+                    <select class="form-control" name="tipMagacina" [(ngModel)]="stavkeUMagacinu.tipMagacina" id="field_tipMagacina" >
+                        <option value="MAGACIN_SIROVINA">{{'manProdApp.TipMagacina.MAGACIN_SIROVINA' | translate}}</option>
+                        <option value="MAGACIN_GOTOVIH_PROIZVODA">{{'manProdApp.TipMagacina.MAGACIN_GOTOVIH_PROIZVODA' | translate}}</option>
+                        <option value="MAGACIN_PROIZVODNJE_U_TOKU">{{'manProdApp.TipMagacina.MAGACIN_PROIZVODNJE_U_TOKU' | translate}}</option>
+                    </select>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

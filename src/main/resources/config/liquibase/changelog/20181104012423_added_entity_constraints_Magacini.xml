@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Magacini.
+    -->
+    <changeSet id="20181104012423-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="stavkeumagacinu_id"
+                                 baseTableName="magacini"
+                                 constraintName="fk_magacini_stavkeumagacinu_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="stavke_u_magacinu"/>
+
+        <addForeignKeyConstraint baseColumnNames="tansakcijeumagacinu_id"
+                                 baseTableName="magacini"
+                                 constraintName="fk_magacini_tansakcijeumagacinu_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="transakcije_u_magacinu"/>
+
+        <addForeignKeyConstraint baseColumnNames="alati_id"
+                                 baseTableName="magacini"
+                                 constraintName="fk_magacini_alati_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="alati"/>
+
+        <addForeignKeyConstraint baseColumnNames="pribori_id"
+                                 baseTableName="magacini"
+                                 constraintName="fk_magacini_pribori_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pribori"/>
+
+        <addForeignKeyConstraint baseColumnNames="merni_alati_id"
+                                 baseTableName="magacini"
+                                 constraintName="fk_magacini_merni_alati_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="merni_alati"/>
+
+        <addForeignKeyConstraint baseColumnNames="finalni_proizvod_id"
+                                 baseTableName="magacini"
+                                 constraintName="fk_magacini_finalni_proizvod_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="finalni_proizvod"/>
+
+        <addForeignKeyConstraint baseColumnNames="poluproizvod_id"
+                                 baseTableName="magacini"
+                                 constraintName="fk_magacini_poluproizvod_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="poluproizvod"/>
+
+        <addForeignKeyConstraint baseColumnNames="kupovni_proizvod_id"
+                                 baseTableName="magacini"
+                                 constraintName="fk_magacini_kupovni_proizvod_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="kupovni_proizvod"/>
+
+        <addForeignKeyConstraint baseColumnNames="pomocni_proizvod_id"
+                                 baseTableName="magacini"
+                                 constraintName="fk_magacini_pomocni_proizvod_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pomocni_proizvod"/>
+
+        <addForeignKeyConstraint baseColumnNames="sirovine_id"
+                                 baseTableName="magacini"
+                                 constraintName="fk_magacini_sirovine_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sirovine"/>
+
+        <addForeignKeyConstraint baseColumnNames="kupovni_materijal_id"
+                                 baseTableName="magacini"
+                                 constraintName="fk_magacini_kupovni_materijal_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="kupovni_materijal"/>
+
+        <addForeignKeyConstraint baseColumnNames="komponente_id"
+                                 baseTableName="magacini"
+                                 constraintName="fk_magacini_komponente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="komponenete"/>
+
+        <addForeignKeyConstraint baseColumnNames="potrosni_materijal_id"
+                                 baseTableName="magacini"
+                                 constraintName="fk_magacini_potrosni_materijal_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="potrosni_materijal"/>
+
+        <addForeignKeyConstraint baseColumnNames="ostali_materijali_id"
+                                 baseTableName="magacini"
+                                 constraintName="fk_magacini_ostali_materijali_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ostali_materijali"/>
+
+        <addForeignKeyConstraint baseColumnNames="konstruktivna_sastavnica_id"
+                                 baseTableName="magacini"
+                                 constraintName="fk_magacini_konstruktivna_sastavnica_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="konstruktivna_sastavnica"/>
+
+    </changeSet>
+</databaseChangeLog>

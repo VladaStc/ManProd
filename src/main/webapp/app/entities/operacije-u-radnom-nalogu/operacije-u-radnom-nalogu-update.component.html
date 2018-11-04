@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-operacije-u-radnom-nalogu-heading" jhiTranslate="manProdApp.operacijeURadnomNalogu.home.createOrEditLabel">Create or edit a Operacije U Radnom Nalogu</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!operacijeURadnomNalogu.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="operacijeURadnomNalogu.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.operacijeURadnomNalogu.naziv" for="field_naziv">Naziv</label>
+                    <input type="text" class="form-control" name="naziv" id="field_naziv"
+                        [(ngModel)]="operacijeURadnomNalogu.naziv" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.operacijeURadnomNalogu.vremeRada" for="field_vremeRada">Vreme Rada</label>
+                    <input type="number" class="form-control" name="vremeRada" id="field_vremeRada"
+                        [(ngModel)]="operacijeURadnomNalogu.vremeRada" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.operacijeURadnomNalogu.pripremnoZavrsnoVreme" for="field_pripremnoZavrsnoVreme">Pripremno Zavrsno Vreme</label>
+                    <input type="number" class="form-control" name="pripremnoZavrsnoVreme" id="field_pripremnoZavrsnoVreme"
+                        [(ngModel)]="operacijeURadnomNalogu.pripremnoZavrsnoVreme" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.operacijeURadnomNalogu.cena" for="field_cena">Cena</label>
+                    <input type="number" class="form-control" name="cena" id="field_cena"
+                        [(ngModel)]="operacijeURadnomNalogu.cena" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.operacijeURadnomNalogu.skica" for="field_skica">Skica</label>
+                    <input type="text" class="form-control" name="skica" id="field_skica"
+                        [(ngModel)]="operacijeURadnomNalogu.skica" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.operacijeURadnomNalogu.datumIVremePocetka" for="field_datumIVremePocetka">Datum I Vreme Pocetka</label>
+                    <div class="d-flex">
+                        <input id="field_datumIVremePocetka" type="datetime-local" class="form-control" name="datumIVremePocetka" [(ngModel)]="datumIVremePocetka"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.operacijeURadnomNalogu.datumIVremeZavrsetka" for="field_datumIVremeZavrsetka">Datum I Vreme Zavrsetka</label>
+                    <div class="d-flex">
+                        <input id="field_datumIVremeZavrsetka" type="datetime-local" class="form-control" name="datumIVremeZavrsetka" [(ngModel)]="datumIVremeZavrsetka"
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.operacijeURadnomNalogu.radniNalog" for="field_radniNalog">Radni Nalog</label>
+                    <select class="form-control" id="field_radniNalog" name="radniNalog" [(ngModel)]="operacijeURadnomNalogu.radniNalog">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="radniNalogOption.id === operacijeURadnomNalogu.radniNalog?.id ? operacijeURadnomNalogu.radniNalog : radniNalogOption" *ngFor="let radniNalogOption of radninalogs; trackBy: trackRadniNalogById">{{radniNalogOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+{
+    "manProdApp": {
+        "ostaliMaterijali": {
+            "home": {
+                "title": "Ostali Materijalis",
+                "createLabel": "Kreiraj novi Ostali Materijali",
+                "createOrEditLabel": "Kreirajte ili izmenite Ostali Materijali"
+            },
+            "created": "Kreiran je novi Ostali Materijali pod nazivom {{ param }}",
+            "updated": "Ostali Materijali pod nazivom {{ param }} je ažuriran",
+            "deleted": "Ostali Materijali pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Ostali Materijali pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Ostali Materijali"
+            },
+            "sifra": "Sifra",
+            "naziv": "Naziv",
+            "vrsta": "Vrsta",
+            "jedMere": "Jed Mere",
+            "namena": "Namena",
+            "nabavnaCena": "Nabavna Cena",
+            "napomena": "Napomena"
+        }
+    }
+}

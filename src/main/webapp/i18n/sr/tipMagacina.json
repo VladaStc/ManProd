@@ -1,0 +1,10 @@
+{
+    "manProdApp": {
+        "TipMagacina": {
+            "null": "",
+            "MAGACIN_SIROVINA": "MAGACIN_SIROVINA",
+            "MAGACIN_GOTOVIH_PROIZVODA": "MAGACIN_GOTOVIH_PROIZVODA",
+            "MAGACIN_PROIZVODNJE_U_TOKU": "MAGACIN_PROIZVODNJE_U_TOKU"
+        }
+    }
+}

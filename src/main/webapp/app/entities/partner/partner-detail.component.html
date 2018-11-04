@@ -1,0 +1,85 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="partner">
+            <h2><span jhiTranslate="manProdApp.partner.detail.title">Partner</span> {{partner.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.partner.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{partner.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.partner.lokacija">Lokacija</span></dt>
+                <dd>
+                    <span>{{partner.lokacija}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.partner.finalniProizvod">Finalni Proizvod</span></dt>
+                <dd>
+                    <div *ngIf="partner.finalniProizvod">
+                        <a [routerLink]="['/finalni-proizvod', partner.finalniProizvod?.id, 'view']">{{partner.finalniProizvod?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.partner.poluproizvod">Poluproizvod</span></dt>
+                <dd>
+                    <div *ngIf="partner.poluproizvod">
+                        <a [routerLink]="['/poluproizvod', partner.poluproizvod?.id, 'view']">{{partner.poluproizvod?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.partner.kupovniProizvod">Kupovni Proizvod</span></dt>
+                <dd>
+                    <div *ngIf="partner.kupovniProizvod">
+                        <a [routerLink]="['/kupovni-proizvod', partner.kupovniProizvod?.id, 'view']">{{partner.kupovniProizvod?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.partner.pomocniProizvod">Pomocni Proizvod</span></dt>
+                <dd>
+                    <div *ngIf="partner.pomocniProizvod">
+                        <a [routerLink]="['/pomocni-proizvod', partner.pomocniProizvod?.id, 'view']">{{partner.pomocniProizvod?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.partner.sirovine">Sirovine</span></dt>
+                <dd>
+                    <div *ngIf="partner.sirovine">
+                        <a [routerLink]="['/sirovine', partner.sirovine?.id, 'view']">{{partner.sirovine?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.partner.kupovniMaterijal">Kupovni Materijal</span></dt>
+                <dd>
+                    <div *ngIf="partner.kupovniMaterijal">
+                        <a [routerLink]="['/kupovni-materijal', partner.kupovniMaterijal?.id, 'view']">{{partner.kupovniMaterijal?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.partner.komponente">Komponente</span></dt>
+                <dd>
+                    <div *ngIf="partner.komponente">
+                        <a [routerLink]="['/komponenete', partner.komponente?.id, 'view']">{{partner.komponente?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.partner.potrosniMaterijal">Potrosni Materijal</span></dt>
+                <dd>
+                    <div *ngIf="partner.potrosniMaterijal">
+                        <a [routerLink]="['/potrosni-materijal', partner.potrosniMaterijal?.id, 'view']">{{partner.potrosniMaterijal?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.partner.ostaliMaterijali">Ostali Materijali</span></dt>
+                <dd>
+                    <div *ngIf="partner.ostaliMaterijali">
+                        <a [routerLink]="['/ostali-materijali', partner.ostaliMaterijali?.id, 'view']">{{partner.ostaliMaterijali?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/partner', partner.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="manProdApp.proizvodniPogoni.home.title">Proizvodni Pogonis</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-proizvodni-pogoni" [routerLink]="['/proizvodni-pogoni/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="manProdApp.proizvodniPogoni.home.createLabel">
+            Create new Proizvodni Pogoni
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="proizvodniPogonis">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="manProdApp.proizvodniPogoni.naziv">Naziv</span></th>
+            <th><span jhiTranslate="manProdApp.proizvodniPogoni.lokacija">Lokacija</span></th>
+            <th><span jhiTranslate="manProdApp.proizvodniPogoni.povrsina">Povrsina</span></th>
+            <th><span jhiTranslate="manProdApp.proizvodniPogoni.rukovodilac">Rukovodilac</span></th>
+            <th><span jhiTranslate="manProdApp.proizvodniPogoni.napomena">Napomena</span></th>
+            <th><span jhiTranslate="manProdApp.proizvodniPogoni.proizvodneLinije">Proizvodne Linije</span></th>
+            <th><span jhiTranslate="manProdApp.proizvodniPogoni.obradniSistem">Obradni Sistem</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let proizvodniPogoni of proizvodniPogonis ;trackBy: trackId">
+                <td><a [routerLink]="['/proizvodni-pogoni', proizvodniPogoni.id, 'view' ]">{{proizvodniPogoni.id}}</a></td>
+                <td>{{proizvodniPogoni.naziv}}</td>
+                <td>{{proizvodniPogoni.lokacija}}</td>
+                <td>{{proizvodniPogoni.povrsina}}</td>
+                <td>{{proizvodniPogoni.rukovodilac}}</td>
+                <td>{{proizvodniPogoni.napomena}}</td>
+                <td>
+                    <div *ngIf="proizvodniPogoni.proizvodneLinije">
+                        <a [routerLink]="['../proizvodne-linije', proizvodniPogoni.proizvodneLinije?.id, 'view' ]" >{{proizvodniPogoni.proizvodneLinije?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="proizvodniPogoni.obradniSistem">
+                        <a [routerLink]="['../obradni-sistem', proizvodniPogoni.obradniSistem?.id, 'view' ]" >{{proizvodniPogoni.obradniSistem?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/proizvodni-pogoni', proizvodniPogoni.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/proizvodni-pogoni', proizvodniPogoni.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'proizvodni-pogoni/'+ proizvodniPogoni.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

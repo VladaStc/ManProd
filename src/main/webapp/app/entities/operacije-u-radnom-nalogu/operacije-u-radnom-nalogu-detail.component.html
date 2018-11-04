@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="operacijeURadnomNalogu">
+            <h2><span jhiTranslate="manProdApp.operacijeURadnomNalogu.detail.title">Operacije U Radnom Nalogu</span> {{operacijeURadnomNalogu.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.operacijeURadnomNalogu.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{operacijeURadnomNalogu.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.operacijeURadnomNalogu.vremeRada">Vreme Rada</span></dt>
+                <dd>
+                    <span>{{operacijeURadnomNalogu.vremeRada}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.operacijeURadnomNalogu.pripremnoZavrsnoVreme">Pripremno Zavrsno Vreme</span></dt>
+                <dd>
+                    <span>{{operacijeURadnomNalogu.pripremnoZavrsnoVreme}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.operacijeURadnomNalogu.cena">Cena</span></dt>
+                <dd>
+                    <span>{{operacijeURadnomNalogu.cena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.operacijeURadnomNalogu.skica">Skica</span></dt>
+                <dd>
+                    <span>{{operacijeURadnomNalogu.skica}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.operacijeURadnomNalogu.datumIVremePocetka">Datum I Vreme Pocetka</span></dt>
+                <dd>
+                    <span>{{operacijeURadnomNalogu.datumIVremePocetka}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.operacijeURadnomNalogu.datumIVremeZavrsetka">Datum I Vreme Zavrsetka</span></dt>
+                <dd>
+                    <span>{{operacijeURadnomNalogu.datumIVremeZavrsetka}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.operacijeURadnomNalogu.radniNalog">Radni Nalog</span></dt>
+                <dd>
+                    <div *ngIf="operacijeURadnomNalogu.radniNalog">
+                        <a [routerLink]="['/radni-nalog', operacijeURadnomNalogu.radniNalog?.id, 'view']">{{operacijeURadnomNalogu.radniNalog?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/operacije-u-radnom-nalogu', operacijeURadnomNalogu.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

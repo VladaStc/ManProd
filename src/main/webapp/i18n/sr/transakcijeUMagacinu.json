@@ -1,0 +1,26 @@
+{
+    "manProdApp": {
+        "transakcijeUMagacinu": {
+            "home": {
+                "title": "Transakcije U Magacinus",
+                "createLabel": "Kreiraj novi Transakcije U Magacinu",
+                "createOrEditLabel": "Kreirajte ili izmenite Transakcije U Magacinu"
+            },
+            "created": "Kreiran je novi Transakcije U Magacinu pod nazivom {{ param }}",
+            "updated": "Transakcije U Magacinu pod nazivom {{ param }} je ažuriran",
+            "deleted": "Transakcije U Magacinu pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Transakcije U Magacinu pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Transakcije U Magacinu"
+            },
+            "ulaz": "Ulaz",
+            "izlaz": "Izlaz",
+            "stanje": "Stanje",
+            "napomena": "Napomena",
+            "datum": "Datum",
+            "tipMagacina": "Tip Magacina"
+        }
+    }
+}

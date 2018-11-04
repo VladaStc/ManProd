@@ -1,0 +1,26 @@
+{
+    "manProdApp": {
+        "dobavljac": {
+            "home": {
+                "title": "Dobavljacs",
+                "createLabel": "Create a new Dobavljac",
+                "createOrEditLabel": "Create or edit a Dobavljac"
+            },
+            "created": "A new Dobavljac is created with identifier {{ param }}",
+            "updated": "A Dobavljac is updated with identifier {{ param }}",
+            "deleted": "A Dobavljac is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Dobavljac {{ id }}?"
+            },
+            "detail": {
+                "title": "Dobavljac"
+            },
+            "naziv": "Naziv",
+            "lokacija": "Lokacija",
+            "kolicina": "Kolicina",
+            "alati": "Alati",
+            "pribori": "Pribori",
+            "merniAlati": "Merni Alati"
+        }
+    }
+}

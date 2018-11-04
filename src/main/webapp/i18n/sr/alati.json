@@ -1,0 +1,27 @@
+{
+    "manProdApp": {
+        "alati": {
+            "home": {
+                "title": "Alatis",
+                "createLabel": "Kreiraj novi Alati",
+                "createOrEditLabel": "Kreirajte ili izmenite Alati"
+            },
+            "created": "Kreiran je novi Alati pod nazivom {{ param }}",
+            "updated": "Alati pod nazivom {{ param }} je ažuriran",
+            "deleted": "Alati pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Alati pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Alati"
+            },
+            "naziv": "Naziv",
+            "vrsta": "Vrsta",
+            "jedMere": "Jed Mere",
+            "namena": "Namena",
+            "cena": "Cena",
+            "trajanje": "Trajanje",
+            "zahvati": "Zahvati"
+        }
+    }
+}

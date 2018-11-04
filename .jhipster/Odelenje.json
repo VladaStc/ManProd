@@ -1,0 +1,52 @@
+{
+    "name": "Odelenje",
+    "fields": [
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lokacija",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "povrsina",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "rukovodilac",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "napomena",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "radionica",
+            "otherEntityName": "radionica",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "odelenje"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "obradniSistem",
+            "otherEntityName": "obradniSistem",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "odelenje"
+        }
+    ],
+    "changelogDate": "20181104012417",
+    "entityTableName": "odelenje",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

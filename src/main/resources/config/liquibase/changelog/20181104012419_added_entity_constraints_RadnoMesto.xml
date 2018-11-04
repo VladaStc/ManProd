@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity RadnoMesto.
+    -->
+    <changeSet id="20181104012419-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="radnici_id"
+                                 baseTableName="radno_mesto"
+                                 constraintName="fk_radno_mesto_radnici_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="radnici"/>
+
+        <addForeignKeyConstraint baseColumnNames="operacijeuradnom_nalogu_id"
+                                 baseTableName="radno_mesto"
+                                 constraintName="fk_radno_mesto_operacijeuradnom_nalogu_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="operacije_u_radnom_nalogu"/>
+
+        <addForeignKeyConstraint baseColumnNames="operacije_id"
+                                 baseTableName="radno_mesto"
+                                 constraintName="fk_radno_mesto_operacije_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="operacije"/>
+
+        <addForeignKeyConstraint baseColumnNames="zahvati_id"
+                                 baseTableName="radno_mesto"
+                                 constraintName="fk_radno_mesto_zahvati_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="zahvati"/>
+
+    </changeSet>
+</databaseChangeLog>

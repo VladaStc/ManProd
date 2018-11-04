@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-dobavljac-heading" jhiTranslate="manProdApp.dobavljac.home.createOrEditLabel">Create or edit a Dobavljac</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!dobavljac.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="dobavljac.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.dobavljac.naziv" for="field_naziv">Naziv</label>
+                    <input type="text" class="form-control" name="naziv" id="field_naziv"
+                        [(ngModel)]="dobavljac.naziv" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.dobavljac.lokacija" for="field_lokacija">Lokacija</label>
+                    <input type="text" class="form-control" name="lokacija" id="field_lokacija"
+                        [(ngModel)]="dobavljac.lokacija" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.dobavljac.kolicina" for="field_kolicina">Kolicina</label>
+                    <input type="number" class="form-control" name="kolicina" id="field_kolicina"
+                        [(ngModel)]="dobavljac.kolicina" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.dobavljac.alati" for="field_alati">Alati</label>
+                    <select class="form-control" id="field_alati" name="alati" [(ngModel)]="dobavljac.alati">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="alatiOption.id === dobavljac.alati?.id ? dobavljac.alati : alatiOption" *ngFor="let alatiOption of alatis; trackBy: trackAlatiById">{{alatiOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.dobavljac.pribori" for="field_pribori">Pribori</label>
+                    <select class="form-control" id="field_pribori" name="pribori" [(ngModel)]="dobavljac.pribori">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="priboriOption.id === dobavljac.pribori?.id ? dobavljac.pribori : priboriOption" *ngFor="let priboriOption of priboris; trackBy: trackPriboriById">{{priboriOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.dobavljac.merniAlati" for="field_merniAlati">Merni Alati</label>
+                    <select class="form-control" id="field_merniAlati" name="merniAlati" [(ngModel)]="dobavljac.merniAlati">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="merniAlatiOption.id === dobavljac.merniAlati?.id ? dobavljac.merniAlati : merniAlatiOption" *ngFor="let merniAlatiOption of mernialatis; trackBy: trackMerniAlatiById">{{merniAlatiOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

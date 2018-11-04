@@ -1,0 +1,26 @@
+{
+    "manProdApp": {
+        "poluproizvod": {
+            "home": {
+                "title": "Poluproizvods",
+                "createLabel": "Create a new Poluproizvod",
+                "createOrEditLabel": "Create or edit a Poluproizvod"
+            },
+            "created": "A new Poluproizvod is created with identifier {{ param }}",
+            "updated": "A Poluproizvod is updated with identifier {{ param }}",
+            "deleted": "A Poluproizvod is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Poluproizvod {{ id }}?"
+            },
+            "detail": {
+                "title": "Poluproizvod"
+            },
+            "naziv": "Naziv",
+            "vrsta": "Vrsta",
+            "jedMere": "Jed Mere",
+            "namena": "Namena",
+            "cena": "Cena",
+            "napomena": "Napomena"
+        }
+    }
+}

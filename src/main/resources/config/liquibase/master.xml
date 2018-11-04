@@ -5,6 +5,56 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012415_added_entity_ProizvodniPogoni.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012416_added_entity_ProizvodneLinije.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012417_added_entity_Odelenje.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012418_added_entity_Radionica.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012419_added_entity_RadnoMesto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012420_added_entity_ObradniSistem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012421_added_entity_Masina.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012422_added_entity_Oprema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012423_added_entity_Magacini.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012424_added_entity_StavkeUMagacinu.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012425_added_entity_TransakcijeUMagacinu.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012426_added_entity_Dobavljac.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012427_added_entity_Alati.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012428_added_entity_Pribori.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012429_added_entity_MerniAlati.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012430_added_entity_Partner.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012431_added_entity_FinalniProizvod.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012432_added_entity_Poluproizvod.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012433_added_entity_KupovniProizvod.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012434_added_entity_PomocniProizvod.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012435_added_entity_Sirovine.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012436_added_entity_KupovniMaterijal.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012437_added_entity_Komponenete.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012438_added_entity_PotrosniMaterijal.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012439_added_entity_PomocniMaterijal.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012440_added_entity_OstaliMaterijali.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012441_added_entity_KonstruktivnaSastavnica.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012442_added_entity_Radnici.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012443_added_entity_RadniNalog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012444_added_entity_OperacijeURadnomNalogu.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012445_added_entity_Operacije.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012446_added_entity_Zahvati.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20181104012415_added_entity_constraints_ProizvodniPogoni.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012416_added_entity_constraints_ProizvodneLinije.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012417_added_entity_constraints_Odelenje.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012418_added_entity_constraints_Radionica.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012419_added_entity_constraints_RadnoMesto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012420_added_entity_constraints_ObradniSistem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012421_added_entity_constraints_Masina.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012422_added_entity_constraints_Oprema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012423_added_entity_constraints_Magacini.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012426_added_entity_constraints_Dobavljac.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012427_added_entity_constraints_Alati.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012428_added_entity_constraints_Pribori.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012430_added_entity_constraints_Partner.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012435_added_entity_constraints_Sirovine.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012439_added_entity_constraints_PomocniMaterijal.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012442_added_entity_constraints_Radnici.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012444_added_entity_constraints_OperacijeURadnomNalogu.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181104012445_added_entity_constraints_Operacije.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

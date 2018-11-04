@@ -1,0 +1,32 @@
+{
+    "manProdApp": {
+        "radnici": {
+            "home": {
+                "title": "Radnicis",
+                "createLabel": "Create a new Radnici",
+                "createOrEditLabel": "Create or edit a Radnici"
+            },
+            "created": "A new Radnici is created with identifier {{ param }}",
+            "updated": "A Radnici is updated with identifier {{ param }}",
+            "deleted": "A Radnici is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Radnici {{ id }}?"
+            },
+            "detail": {
+                "title": "Radnici"
+            },
+            "ime": "Ime",
+            "prezime": "Prezime",
+            "jmbg": "Jmbg",
+            "kvalifikacija": "Kvalifikacija",
+            "koeficijent": "Koeficijent",
+            "sertifikat": "Sertifikat",
+            "pol": "Pol",
+            "napomena": "Napomena",
+            "tipRadnika": "Tip Radnika",
+            "operacijeURadnomNalogu": "Operacije U Radnom Nalogu",
+            "operacije": "Operacije",
+            "zahvati": "Zahvati"
+        }
+    }
+}

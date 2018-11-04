@@ -1,0 +1,110 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="manProdApp.partner.home.title">Partners</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-partner" [routerLink]="['/partner/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="manProdApp.partner.home.createLabel">
+            Create new Partner
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="partners">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="manProdApp.partner.naziv">Naziv</span></th>
+            <th><span jhiTranslate="manProdApp.partner.lokacija">Lokacija</span></th>
+            <th><span jhiTranslate="manProdApp.partner.finalniProizvod">Finalni Proizvod</span></th>
+            <th><span jhiTranslate="manProdApp.partner.poluproizvod">Poluproizvod</span></th>
+            <th><span jhiTranslate="manProdApp.partner.kupovniProizvod">Kupovni Proizvod</span></th>
+            <th><span jhiTranslate="manProdApp.partner.pomocniProizvod">Pomocni Proizvod</span></th>
+            <th><span jhiTranslate="manProdApp.partner.sirovine">Sirovine</span></th>
+            <th><span jhiTranslate="manProdApp.partner.kupovniMaterijal">Kupovni Materijal</span></th>
+            <th><span jhiTranslate="manProdApp.partner.komponente">Komponente</span></th>
+            <th><span jhiTranslate="manProdApp.partner.potrosniMaterijal">Potrosni Materijal</span></th>
+            <th><span jhiTranslate="manProdApp.partner.ostaliMaterijali">Ostali Materijali</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let partner of partners ;trackBy: trackId">
+                <td><a [routerLink]="['/partner', partner.id, 'view' ]">{{partner.id}}</a></td>
+                <td>{{partner.naziv}}</td>
+                <td>{{partner.lokacija}}</td>
+                <td>
+                    <div *ngIf="partner.finalniProizvod">
+                        <a [routerLink]="['../finalni-proizvod', partner.finalniProizvod?.id, 'view' ]" >{{partner.finalniProizvod?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="partner.poluproizvod">
+                        <a [routerLink]="['../poluproizvod', partner.poluproizvod?.id, 'view' ]" >{{partner.poluproizvod?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="partner.kupovniProizvod">
+                        <a [routerLink]="['../kupovni-proizvod', partner.kupovniProizvod?.id, 'view' ]" >{{partner.kupovniProizvod?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="partner.pomocniProizvod">
+                        <a [routerLink]="['../pomocni-proizvod', partner.pomocniProizvod?.id, 'view' ]" >{{partner.pomocniProizvod?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="partner.sirovine">
+                        <a [routerLink]="['../sirovine', partner.sirovine?.id, 'view' ]" >{{partner.sirovine?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="partner.kupovniMaterijal">
+                        <a [routerLink]="['../kupovni-materijal', partner.kupovniMaterijal?.id, 'view' ]" >{{partner.kupovniMaterijal?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="partner.komponente">
+                        <a [routerLink]="['../komponenete', partner.komponente?.id, 'view' ]" >{{partner.komponente?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="partner.potrosniMaterijal">
+                        <a [routerLink]="['../potrosni-materijal', partner.potrosniMaterijal?.id, 'view' ]" >{{partner.potrosniMaterijal?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="partner.ostaliMaterijali">
+                        <a [routerLink]="['../ostali-materijali', partner.ostaliMaterijali?.id, 'view' ]" >{{partner.ostaliMaterijali?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/partner', partner.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/partner', partner.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'partner/'+ partner.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

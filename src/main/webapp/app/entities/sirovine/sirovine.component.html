@@ -1,0 +1,84 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="manProdApp.sirovine.home.title">Sirovines</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-sirovine" [routerLink]="['/sirovine/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="manProdApp.sirovine.home.createLabel">
+            Create new Sirovine
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="sirovines">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="manProdApp.sirovine.sifra">Sifra</span></th>
+            <th><span jhiTranslate="manProdApp.sirovine.naziv">Naziv</span></th>
+            <th><span jhiTranslate="manProdApp.sirovine.vrsta">Vrsta</span></th>
+            <th><span jhiTranslate="manProdApp.sirovine.jedMere">Jed Mere</span></th>
+            <th><span jhiTranslate="manProdApp.sirovine.namena">Namena</span></th>
+            <th><span jhiTranslate="manProdApp.sirovine.nabavnaCena">Nabavna Cena</span></th>
+            <th><span jhiTranslate="manProdApp.sirovine.napomena">Napomena</span></th>
+            <th><span jhiTranslate="manProdApp.sirovine.operacijeURadnomNalogu">Operacije U Radnom Nalogu</span></th>
+            <th><span jhiTranslate="manProdApp.sirovine.operacije">Operacije</span></th>
+            <th><span jhiTranslate="manProdApp.sirovine.zahvati">Zahvati</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sirovine of sirovines ;trackBy: trackId">
+                <td><a [routerLink]="['/sirovine', sirovine.id, 'view' ]">{{sirovine.id}}</a></td>
+                <td>{{sirovine.sifra}}</td>
+                <td>{{sirovine.naziv}}</td>
+                <td>{{sirovine.vrsta}}</td>
+                <td jhiTranslate="{{'manProdApp.JedMere.' + sirovine.jedMere}}">{{sirovine.jedMere}}</td>
+                <td>{{sirovine.namena}}</td>
+                <td>{{sirovine.nabavnaCena}}</td>
+                <td>{{sirovine.napomena}}</td>
+                <td>
+                    <div *ngIf="sirovine.operacijeURadnomNalogu">
+                        <a [routerLink]="['../operacije-u-radnom-nalogu', sirovine.operacijeURadnomNalogu?.id, 'view' ]" >{{sirovine.operacijeURadnomNalogu?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="sirovine.operacije">
+                        <a [routerLink]="['../operacije', sirovine.operacije?.id, 'view' ]" >{{sirovine.operacije?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="sirovine.zahvati">
+                        <a [routerLink]="['../zahvati', sirovine.zahvati?.id, 'view' ]" >{{sirovine.zahvati?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/sirovine', sirovine.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sirovine', sirovine.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'sirovine/'+ sirovine.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

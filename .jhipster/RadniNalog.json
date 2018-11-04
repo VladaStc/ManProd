@@ -1,0 +1,44 @@
+{
+    "name": "RadniNalog",
+    "fields": [
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "datumIVremeOtvaranja",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "datumIVremeZatvaranja",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Status",
+            "fieldValues": "OTVOREN,AKTIVAN,ZATVOREN"
+        },
+        {
+            "fieldName": "nosilac",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cena",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "kolicina",
+            "fieldType": "Double"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181104012443",
+    "entityTableName": "radni_nalog",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

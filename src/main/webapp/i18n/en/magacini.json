@@ -1,0 +1,41 @@
+{
+    "manProdApp": {
+        "magacini": {
+            "home": {
+                "title": "Magacinis",
+                "createLabel": "Create a new Magacini",
+                "createOrEditLabel": "Create or edit a Magacini"
+            },
+            "created": "A new Magacini is created with identifier {{ param }}",
+            "updated": "A Magacini is updated with identifier {{ param }}",
+            "deleted": "A Magacini is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Magacini {{ id }}?"
+            },
+            "detail": {
+                "title": "Magacini"
+            },
+            "naziv": "Naziv",
+            "lokacija": "Lokacija",
+            "namena": "Namena",
+            "rukovodilac": "Rukovodilac",
+            "napomena": "Napomena",
+            "tipMagacina": "Tip Magacina",
+            "stavkeUMagacinu": "Stavke U Magacinu",
+            "tansakcijeUMagacinu": "Tansakcije U Magacinu",
+            "alati": "Alati",
+            "pribori": "Pribori",
+            "merniAlati": "Merni Alati",
+            "finalniProizvod": "Finalni Proizvod",
+            "poluproizvod": "Poluproizvod",
+            "kupovniProizvod": "Kupovni Proizvod",
+            "pomocniProizvod": "Pomocni Proizvod",
+            "sirovine": "Sirovine",
+            "kupovniMaterijal": "Kupovni Materijal",
+            "komponente": "Komponente",
+            "potrosniMaterijal": "Potrosni Materijal",
+            "ostaliMaterijali": "Ostali Materijali",
+            "konstruktivnaSastavnica": "Konstruktivna Sastavnica"
+        }
+    }
+}

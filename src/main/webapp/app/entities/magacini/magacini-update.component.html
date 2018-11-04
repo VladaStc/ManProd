@@ -1,0 +1,162 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-magacini-heading" jhiTranslate="manProdApp.magacini.home.createOrEditLabel">Create or edit a Magacini</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!magacini.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="magacini.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.naziv" for="field_naziv">Naziv</label>
+                    <input type="text" class="form-control" name="naziv" id="field_naziv"
+                        [(ngModel)]="magacini.naziv" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.lokacija" for="field_lokacija">Lokacija</label>
+                    <input type="text" class="form-control" name="lokacija" id="field_lokacija"
+                        [(ngModel)]="magacini.lokacija" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.namena" for="field_namena">Namena</label>
+                    <input type="text" class="form-control" name="namena" id="field_namena"
+                        [(ngModel)]="magacini.namena" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.rukovodilac" for="field_rukovodilac">Rukovodilac</label>
+                    <input type="text" class="form-control" name="rukovodilac" id="field_rukovodilac"
+                        [(ngModel)]="magacini.rukovodilac" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.napomena" for="field_napomena">Napomena</label>
+                    <input type="text" class="form-control" name="napomena" id="field_napomena"
+                        [(ngModel)]="magacini.napomena" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.tipMagacina" for="field_tipMagacina">Tip Magacina</label>
+                    <select class="form-control" name="tipMagacina" [(ngModel)]="magacini.tipMagacina" id="field_tipMagacina" >
+                        <option value="MAGACIN_SIROVINA">{{'manProdApp.TipMagacina.MAGACIN_SIROVINA' | translate}}</option>
+                        <option value="MAGACIN_GOTOVIH_PROIZVODA">{{'manProdApp.TipMagacina.MAGACIN_GOTOVIH_PROIZVODA' | translate}}</option>
+                        <option value="MAGACIN_PROIZVODNJE_U_TOKU">{{'manProdApp.TipMagacina.MAGACIN_PROIZVODNJE_U_TOKU' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.stavkeUMagacinu" for="field_stavkeUMagacinu">Stavke U Magacinu</label>
+                    <select class="form-control" id="field_stavkeUMagacinu" name="stavkeUMagacinu" [(ngModel)]="magacini.stavkeUMagacinu">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="stavkeUMagacinuOption.id === magacini.stavkeUMagacinu?.id ? magacini.stavkeUMagacinu : stavkeUMagacinuOption" *ngFor="let stavkeUMagacinuOption of stavkeumagacinus; trackBy: trackStavkeUMagacinuById">{{stavkeUMagacinuOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.tansakcijeUMagacinu" for="field_tansakcijeUMagacinu">Tansakcije U Magacinu</label>
+                    <select class="form-control" id="field_tansakcijeUMagacinu" name="tansakcijeUMagacinu" [(ngModel)]="magacini.tansakcijeUMagacinu">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="transakcijeUMagacinuOption.id === magacini.tansakcijeUMagacinu?.id ? magacini.tansakcijeUMagacinu : transakcijeUMagacinuOption" *ngFor="let transakcijeUMagacinuOption of tansakcijeumagacinus; trackBy: trackTransakcijeUMagacinuById">{{transakcijeUMagacinuOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.alati" for="field_alati">Alati</label>
+                    <select class="form-control" id="field_alati" name="alati" [(ngModel)]="magacini.alati">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="alatiOption.id === magacini.alati?.id ? magacini.alati : alatiOption" *ngFor="let alatiOption of alatis; trackBy: trackAlatiById">{{alatiOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.pribori" for="field_pribori">Pribori</label>
+                    <select class="form-control" id="field_pribori" name="pribori" [(ngModel)]="magacini.pribori">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="priboriOption.id === magacini.pribori?.id ? magacini.pribori : priboriOption" *ngFor="let priboriOption of priboris; trackBy: trackPriboriById">{{priboriOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.merniAlati" for="field_merniAlati">Merni Alati</label>
+                    <select class="form-control" id="field_merniAlati" name="merniAlati" [(ngModel)]="magacini.merniAlati">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="merniAlatiOption.id === magacini.merniAlati?.id ? magacini.merniAlati : merniAlatiOption" *ngFor="let merniAlatiOption of mernialatis; trackBy: trackMerniAlatiById">{{merniAlatiOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.finalniProizvod" for="field_finalniProizvod">Finalni Proizvod</label>
+                    <select class="form-control" id="field_finalniProizvod" name="finalniProizvod" [(ngModel)]="magacini.finalniProizvod">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="finalniProizvodOption.id === magacini.finalniProizvod?.id ? magacini.finalniProizvod : finalniProizvodOption" *ngFor="let finalniProizvodOption of finalniproizvods; trackBy: trackFinalniProizvodById">{{finalniProizvodOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.poluproizvod" for="field_poluproizvod">Poluproizvod</label>
+                    <select class="form-control" id="field_poluproizvod" name="poluproizvod" [(ngModel)]="magacini.poluproizvod">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="poluproizvodOption.id === magacini.poluproizvod?.id ? magacini.poluproizvod : poluproizvodOption" *ngFor="let poluproizvodOption of poluproizvods; trackBy: trackPoluproizvodById">{{poluproizvodOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.kupovniProizvod" for="field_kupovniProizvod">Kupovni Proizvod</label>
+                    <select class="form-control" id="field_kupovniProizvod" name="kupovniProizvod" [(ngModel)]="magacini.kupovniProizvod">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="kupovniProizvodOption.id === magacini.kupovniProizvod?.id ? magacini.kupovniProizvod : kupovniProizvodOption" *ngFor="let kupovniProizvodOption of kupovniproizvods; trackBy: trackKupovniProizvodById">{{kupovniProizvodOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.pomocniProizvod" for="field_pomocniProizvod">Pomocni Proizvod</label>
+                    <select class="form-control" id="field_pomocniProizvod" name="pomocniProizvod" [(ngModel)]="magacini.pomocniProizvod">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="pomocniProizvodOption.id === magacini.pomocniProizvod?.id ? magacini.pomocniProizvod : pomocniProizvodOption" *ngFor="let pomocniProizvodOption of pomocniproizvods; trackBy: trackPomocniProizvodById">{{pomocniProizvodOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.sirovine" for="field_sirovine">Sirovine</label>
+                    <select class="form-control" id="field_sirovine" name="sirovine" [(ngModel)]="magacini.sirovine">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="sirovineOption.id === magacini.sirovine?.id ? magacini.sirovine : sirovineOption" *ngFor="let sirovineOption of sirovines; trackBy: trackSirovineById">{{sirovineOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.kupovniMaterijal" for="field_kupovniMaterijal">Kupovni Materijal</label>
+                    <select class="form-control" id="field_kupovniMaterijal" name="kupovniMaterijal" [(ngModel)]="magacini.kupovniMaterijal">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="kupovniMaterijalOption.id === magacini.kupovniMaterijal?.id ? magacini.kupovniMaterijal : kupovniMaterijalOption" *ngFor="let kupovniMaterijalOption of kupovnimaterijals; trackBy: trackKupovniMaterijalById">{{kupovniMaterijalOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.komponente" for="field_komponente">Komponente</label>
+                    <select class="form-control" id="field_komponente" name="komponente" [(ngModel)]="magacini.komponente">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="komponeneteOption.id === magacini.komponente?.id ? magacini.komponente : komponeneteOption" *ngFor="let komponeneteOption of komponentes; trackBy: trackKomponeneteById">{{komponeneteOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.potrosniMaterijal" for="field_potrosniMaterijal">Potrosni Materijal</label>
+                    <select class="form-control" id="field_potrosniMaterijal" name="potrosniMaterijal" [(ngModel)]="magacini.potrosniMaterijal">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="potrosniMaterijalOption.id === magacini.potrosniMaterijal?.id ? magacini.potrosniMaterijal : potrosniMaterijalOption" *ngFor="let potrosniMaterijalOption of potrosnimaterijals; trackBy: trackPotrosniMaterijalById">{{potrosniMaterijalOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.ostaliMaterijali" for="field_ostaliMaterijali">Ostali Materijali</label>
+                    <select class="form-control" id="field_ostaliMaterijali" name="ostaliMaterijali" [(ngModel)]="magacini.ostaliMaterijali">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="ostaliMaterijaliOption.id === magacini.ostaliMaterijali?.id ? magacini.ostaliMaterijali : ostaliMaterijaliOption" *ngFor="let ostaliMaterijaliOption of ostalimaterijalis; trackBy: trackOstaliMaterijaliById">{{ostaliMaterijaliOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.magacini.konstruktivnaSastavnica" for="field_konstruktivnaSastavnica">Konstruktivna Sastavnica</label>
+                    <select class="form-control" id="field_konstruktivnaSastavnica" name="konstruktivnaSastavnica" [(ngModel)]="magacini.konstruktivnaSastavnica">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="konstruktivnaSastavnicaOption.id === magacini.konstruktivnaSastavnica?.id ? magacini.konstruktivnaSastavnica : konstruktivnaSastavnicaOption" *ngFor="let konstruktivnaSastavnicaOption of konstruktivnasastavnicas; trackBy: trackKonstruktivnaSastavnicaById">{{konstruktivnaSastavnicaOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="radionica">
+            <h2><span jhiTranslate="manProdApp.radionica.detail.title">Radionica</span> {{radionica.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.radionica.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{radionica.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radionica.lokacija">Lokacija</span></dt>
+                <dd>
+                    <span>{{radionica.lokacija}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radionica.povrsina">Povrsina</span></dt>
+                <dd>
+                    <span>{{radionica.povrsina}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radionica.rukovodilac">Rukovodilac</span></dt>
+                <dd>
+                    <span>{{radionica.rukovodilac}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radionica.napomena">Napomena</span></dt>
+                <dd>
+                    <span>{{radionica.napomena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radionica.radnoMesto">Radno Mesto</span></dt>
+                <dd>
+                    <div *ngIf="radionica.radnoMesto">
+                        <a [routerLink]="['/radno-mesto', radionica.radnoMesto?.id, 'view']">{{radionica.radnoMesto?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/radionica', radionica.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

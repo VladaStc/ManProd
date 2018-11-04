@@ -1,0 +1,27 @@
+{
+    "manProdApp": {
+        "radniNalog": {
+            "home": {
+                "title": "Radni Nalogs",
+                "createLabel": "Kreiraj novi Radni Nalog",
+                "createOrEditLabel": "Kreirajte ili izmenite Radni Nalog"
+            },
+            "created": "Kreiran je novi Radni Nalog pod nazivom {{ param }}",
+            "updated": "Radni Nalog pod nazivom {{ param }} je ažuriran",
+            "deleted": "Radni Nalog pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Radni Nalog pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Radni Nalog"
+            },
+            "naziv": "Naziv",
+            "datumIVremeOtvaranja": "Datum I Vreme Otvaranja",
+            "datumIVremeZatvaranja": "Datum I Vreme Zatvaranja",
+            "status": "Status",
+            "nosilac": "Nosilac",
+            "cena": "Cena",
+            "kolicina": "Kolicina"
+        }
+    }
+}

@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sirovine">
+            <h2><span jhiTranslate="manProdApp.sirovine.detail.title">Sirovine</span> {{sirovine.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.sirovine.sifra">Sifra</span></dt>
+                <dd>
+                    <span>{{sirovine.sifra}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.sirovine.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{sirovine.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.sirovine.vrsta">Vrsta</span></dt>
+                <dd>
+                    <span>{{sirovine.vrsta}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.sirovine.jedMere">Jed Mere</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'manProdApp.JedMere.' + sirovine.jedMere}}">{{sirovine.jedMere}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.sirovine.namena">Namena</span></dt>
+                <dd>
+                    <span>{{sirovine.namena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.sirovine.nabavnaCena">Nabavna Cena</span></dt>
+                <dd>
+                    <span>{{sirovine.nabavnaCena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.sirovine.napomena">Napomena</span></dt>
+                <dd>
+                    <span>{{sirovine.napomena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.sirovine.operacijeURadnomNalogu">Operacije U Radnom Nalogu</span></dt>
+                <dd>
+                    <div *ngIf="sirovine.operacijeURadnomNalogu">
+                        <a [routerLink]="['/operacije-u-radnom-nalogu', sirovine.operacijeURadnomNalogu?.id, 'view']">{{sirovine.operacijeURadnomNalogu?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.sirovine.operacije">Operacije</span></dt>
+                <dd>
+                    <div *ngIf="sirovine.operacije">
+                        <a [routerLink]="['/operacije', sirovine.operacije?.id, 'view']">{{sirovine.operacije?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.sirovine.zahvati">Zahvati</span></dt>
+                <dd>
+                    <div *ngIf="sirovine.zahvati">
+                        <a [routerLink]="['/zahvati', sirovine.zahvati?.id, 'view']">{{sirovine.zahvati?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sirovine', sirovine.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

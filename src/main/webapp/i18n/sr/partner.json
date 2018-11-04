@@ -1,0 +1,31 @@
+{
+    "manProdApp": {
+        "partner": {
+            "home": {
+                "title": "Partners",
+                "createLabel": "Kreiraj novi Partner",
+                "createOrEditLabel": "Kreirajte ili izmenite Partner"
+            },
+            "created": "Kreiran je novi Partner pod nazivom {{ param }}",
+            "updated": "Partner pod nazivom {{ param }} je ažuriran",
+            "deleted": "Partner pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Partner pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Partner"
+            },
+            "naziv": "Naziv",
+            "lokacija": "Lokacija",
+            "finalniProizvod": "Finalni Proizvod",
+            "poluproizvod": "Poluproizvod",
+            "kupovniProizvod": "Kupovni Proizvod",
+            "pomocniProizvod": "Pomocni Proizvod",
+            "sirovine": "Sirovine",
+            "kupovniMaterijal": "Kupovni Materijal",
+            "komponente": "Komponente",
+            "potrosniMaterijal": "Potrosni Materijal",
+            "ostaliMaterijali": "Ostali Materijali"
+        }
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "name": "Dobavljac",
+    "fields": [
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lokacija",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "kolicina",
+            "fieldType": "Double"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "alati",
+            "otherEntityName": "alati",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "dobavljac"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "pribori",
+            "otherEntityName": "pribori",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "dobavljac"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "merniAlati",
+            "otherEntityName": "merniAlati",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "dobavljac"
+        }
+    ],
+    "changelogDate": "20181104012426",
+    "entityTableName": "dobavljac",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

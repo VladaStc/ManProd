@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="dobavljac">
+            <h2><span jhiTranslate="manProdApp.dobavljac.detail.title">Dobavljac</span> {{dobavljac.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.dobavljac.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{dobavljac.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.dobavljac.lokacija">Lokacija</span></dt>
+                <dd>
+                    <span>{{dobavljac.lokacija}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.dobavljac.kolicina">Kolicina</span></dt>
+                <dd>
+                    <span>{{dobavljac.kolicina}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.dobavljac.alati">Alati</span></dt>
+                <dd>
+                    <div *ngIf="dobavljac.alati">
+                        <a [routerLink]="['/alati', dobavljac.alati?.id, 'view']">{{dobavljac.alati?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.dobavljac.pribori">Pribori</span></dt>
+                <dd>
+                    <div *ngIf="dobavljac.pribori">
+                        <a [routerLink]="['/pribori', dobavljac.pribori?.id, 'view']">{{dobavljac.pribori?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.dobavljac.merniAlati">Merni Alati</span></dt>
+                <dd>
+                    <div *ngIf="dobavljac.merniAlati">
+                        <a [routerLink]="['/merni-alati', dobavljac.merniAlati?.id, 'view']">{{dobavljac.merniAlati?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/dobavljac', dobavljac.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

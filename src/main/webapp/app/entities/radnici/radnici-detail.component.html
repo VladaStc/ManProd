@@ -1,0 +1,77 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="radnici">
+            <h2><span jhiTranslate="manProdApp.radnici.detail.title">Radnici</span> {{radnici.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.radnici.ime">Ime</span></dt>
+                <dd>
+                    <span>{{radnici.ime}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radnici.prezime">Prezime</span></dt>
+                <dd>
+                    <span>{{radnici.prezime}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radnici.jmbg">Jmbg</span></dt>
+                <dd>
+                    <span>{{radnici.jmbg}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radnici.kvalifikacija">Kvalifikacija</span></dt>
+                <dd>
+                    <span>{{radnici.kvalifikacija}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radnici.koeficijent">Koeficijent</span></dt>
+                <dd>
+                    <span>{{radnici.koeficijent}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radnici.sertifikat">Sertifikat</span></dt>
+                <dd>
+                    <span>{{radnici.sertifikat}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radnici.pol">Pol</span></dt>
+                <dd>
+                    <span>{{radnici.pol}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radnici.napomena">Napomena</span></dt>
+                <dd>
+                    <span>{{radnici.napomena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radnici.tipRadnika">Tip Radnika</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'manProdApp.TipRadnika.' + radnici.tipRadnika}}">{{radnici.tipRadnika}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radnici.operacijeURadnomNalogu">Operacije U Radnom Nalogu</span></dt>
+                <dd>
+                    <div *ngIf="radnici.operacijeURadnomNalogu">
+                        <a [routerLink]="['/operacije-u-radnom-nalogu', radnici.operacijeURadnomNalogu?.id, 'view']">{{radnici.operacijeURadnomNalogu?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radnici.operacije">Operacije</span></dt>
+                <dd>
+                    <div *ngIf="radnici.operacije">
+                        <a [routerLink]="['/operacije', radnici.operacije?.id, 'view']">{{radnici.operacije?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.radnici.zahvati">Zahvati</span></dt>
+                <dd>
+                    <div *ngIf="radnici.zahvati">
+                        <a [routerLink]="['/zahvati', radnici.zahvati?.id, 'view']">{{radnici.zahvati?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/radnici', radnici.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

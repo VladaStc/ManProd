@@ -1,0 +1,22 @@
+{
+    "manProdApp": {
+        "stavkeUMagacinu": {
+            "home": {
+                "title": "Stavke U Magacinus",
+                "createLabel": "Create a new Stavke U Magacinu",
+                "createOrEditLabel": "Create or edit a Stavke U Magacinu"
+            },
+            "created": "A new Stavke U Magacinu is created with identifier {{ param }}",
+            "updated": "A Stavke U Magacinu is updated with identifier {{ param }}",
+            "deleted": "A Stavke U Magacinu is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Stavke U Magacinu {{ id }}?"
+            },
+            "detail": {
+                "title": "Stavke U Magacinu"
+            },
+            "stanje": "Stanje",
+            "tipMagacina": "Tip Magacina"
+        }
+    }
+}

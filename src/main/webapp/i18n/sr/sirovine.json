@@ -1,0 +1,30 @@
+{
+    "manProdApp": {
+        "sirovine": {
+            "home": {
+                "title": "Sirovines",
+                "createLabel": "Kreiraj novi Sirovine",
+                "createOrEditLabel": "Kreirajte ili izmenite Sirovine"
+            },
+            "created": "Kreiran je novi Sirovine pod nazivom {{ param }}",
+            "updated": "Sirovine pod nazivom {{ param }} je ažuriran",
+            "deleted": "Sirovine pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Sirovine pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Sirovine"
+            },
+            "sifra": "Sifra",
+            "naziv": "Naziv",
+            "vrsta": "Vrsta",
+            "jedMere": "Jed Mere",
+            "namena": "Namena",
+            "nabavnaCena": "Nabavna Cena",
+            "napomena": "Napomena",
+            "operacijeURadnomNalogu": "Operacije U Radnom Nalogu",
+            "operacije": "Operacije",
+            "zahvati": "Zahvati"
+        }
+    }
+}

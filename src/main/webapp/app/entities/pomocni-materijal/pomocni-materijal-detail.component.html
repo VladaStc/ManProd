@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pomocniMaterijal">
+            <h2><span jhiTranslate="manProdApp.pomocniMaterijal.detail.title">Pomocni Materijal</span> {{pomocniMaterijal.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.pomocniMaterijal.sifra">Sifra</span></dt>
+                <dd>
+                    <span>{{pomocniMaterijal.sifra}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.pomocniMaterijal.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{pomocniMaterijal.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.pomocniMaterijal.vrsta">Vrsta</span></dt>
+                <dd>
+                    <span>{{pomocniMaterijal.vrsta}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.pomocniMaterijal.jedMere">Jed Mere</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'manProdApp.JedMere.' + pomocniMaterijal.jedMere}}">{{pomocniMaterijal.jedMere}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.pomocniMaterijal.namena">Namena</span></dt>
+                <dd>
+                    <span>{{pomocniMaterijal.namena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.pomocniMaterijal.nabavnaCena">Nabavna Cena</span></dt>
+                <dd>
+                    <span>{{pomocniMaterijal.nabavnaCena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.pomocniMaterijal.napomena">Napomena</span></dt>
+                <dd>
+                    <span>{{pomocniMaterijal.napomena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.pomocniMaterijal.zahvati">Zahvati</span></dt>
+                <dd>
+                    <div *ngIf="pomocniMaterijal.zahvati">
+                        <a [routerLink]="['/zahvati', pomocniMaterijal.zahvati?.id, 'view']">{{pomocniMaterijal.zahvati?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pomocni-materijal', pomocniMaterijal.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="manProdApp.transakcijeUMagacinu.home.title">Transakcije U Magacinus</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-transakcije-u-magacinu" [routerLink]="['/transakcije-u-magacinu/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="manProdApp.transakcijeUMagacinu.home.createLabel">
+            Create new Transakcije U Magacinu
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="transakcijeUMagacinus">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="manProdApp.transakcijeUMagacinu.ulaz">Ulaz</span></th>
+            <th><span jhiTranslate="manProdApp.transakcijeUMagacinu.izlaz">Izlaz</span></th>
+            <th><span jhiTranslate="manProdApp.transakcijeUMagacinu.stanje">Stanje</span></th>
+            <th><span jhiTranslate="manProdApp.transakcijeUMagacinu.napomena">Napomena</span></th>
+            <th><span jhiTranslate="manProdApp.transakcijeUMagacinu.datum">Datum</span></th>
+            <th><span jhiTranslate="manProdApp.transakcijeUMagacinu.tipMagacina">Tip Magacina</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let transakcijeUMagacinu of transakcijeUMagacinus ;trackBy: trackId">
+                <td><a [routerLink]="['/transakcije-u-magacinu', transakcijeUMagacinu.id, 'view' ]">{{transakcijeUMagacinu.id}}</a></td>
+                <td>{{transakcijeUMagacinu.ulaz}}</td>
+                <td>{{transakcijeUMagacinu.izlaz}}</td>
+                <td>{{transakcijeUMagacinu.stanje}}</td>
+                <td>{{transakcijeUMagacinu.napomena}}</td>
+                <td>{{transakcijeUMagacinu.datum | date:'medium'}}</td>
+                <td jhiTranslate="{{'manProdApp.TipMagacina.' + transakcijeUMagacinu.tipMagacina}}">{{transakcijeUMagacinu.tipMagacina}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/transakcije-u-magacinu', transakcijeUMagacinu.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/transakcije-u-magacinu', transakcijeUMagacinu.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'transakcije-u-magacinu/'+ transakcijeUMagacinu.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

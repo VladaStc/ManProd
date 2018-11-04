@@ -1,0 +1,27 @@
+{
+    "manProdApp": {
+        "komponenete": {
+            "home": {
+                "title": "Komponenetes",
+                "createLabel": "Kreiraj novi Komponenete",
+                "createOrEditLabel": "Kreirajte ili izmenite Komponenete"
+            },
+            "created": "Kreiran je novi Komponenete pod nazivom {{ param }}",
+            "updated": "Komponenete pod nazivom {{ param }} je ažuriran",
+            "deleted": "Komponenete pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Komponenete pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Komponenete"
+            },
+            "sifra": "Sifra",
+            "naziv": "Naziv",
+            "vrsta": "Vrsta",
+            "jedMere": "Jed Mere",
+            "namena": "Namena",
+            "nabavnaCena": "Nabavna Cena",
+            "napomena": "Napomena"
+        }
+    }
+}

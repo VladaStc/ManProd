@@ -1,0 +1,22 @@
+{
+    "manProdApp": {
+        "stavkeUMagacinu": {
+            "home": {
+                "title": "Stavke U Magacinus",
+                "createLabel": "Kreiraj novi Stavke U Magacinu",
+                "createOrEditLabel": "Kreirajte ili izmenite Stavke U Magacinu"
+            },
+            "created": "Kreiran je novi Stavke U Magacinu pod nazivom {{ param }}",
+            "updated": "Stavke U Magacinu pod nazivom {{ param }} je ažuriran",
+            "deleted": "Stavke U Magacinu pod nazivom {{ param }} je obrisan",
+            "delete": {
+                "question": "Da li ste sigurni da želite da obrišete Stavke U Magacinu pod nazivom {{ id }}?"
+            },
+            "detail": {
+                "title": "Stavke U Magacinu"
+            },
+            "stanje": "Stanje",
+            "tipMagacina": "Tip Magacina"
+        }
+    }
+}

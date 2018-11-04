@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-oprema-heading" jhiTranslate="manProdApp.oprema.home.createOrEditLabel">Create or edit a Oprema</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!oprema.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="oprema.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.oprema.naziv" for="field_naziv">Naziv</label>
+                    <input type="text" class="form-control" name="naziv" id="field_naziv"
+                        [(ngModel)]="oprema.naziv" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.oprema.lokacija" for="field_lokacija">Lokacija</label>
+                    <input type="text" class="form-control" name="lokacija" id="field_lokacija"
+                        [(ngModel)]="oprema.lokacija" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.oprema.struktura" for="field_struktura">Struktura</label>
+                    <input type="text" class="form-control" name="struktura" id="field_struktura"
+                        [(ngModel)]="oprema.struktura" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.oprema.rukovodilac" for="field_rukovodilac">Rukovodilac</label>
+                    <input type="text" class="form-control" name="rukovodilac" id="field_rukovodilac"
+                        [(ngModel)]="oprema.rukovodilac" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.oprema.napomena" for="field_napomena">Napomena</label>
+                    <input type="text" class="form-control" name="napomena" id="field_napomena"
+                        [(ngModel)]="oprema.napomena" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.oprema.obradniSistem" for="field_obradniSistem">Obradni Sistem</label>
+                    <select class="form-control" id="field_obradniSistem" name="obradniSistem" [(ngModel)]="oprema.obradniSistem" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="obradniSistemOption.id === oprema.obradniSistem?.id ? oprema.obradniSistem : obradniSistemOption" *ngFor="let obradniSistemOption of obradnisistems; trackBy: trackObradniSistemById">{{obradniSistemOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

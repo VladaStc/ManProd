@@ -1,0 +1,27 @@
+{
+    "manProdApp": {
+        "pribori": {
+            "home": {
+                "title": "Priboris",
+                "createLabel": "Create a new Pribori",
+                "createOrEditLabel": "Create or edit a Pribori"
+            },
+            "created": "A new Pribori is created with identifier {{ param }}",
+            "updated": "A Pribori is updated with identifier {{ param }}",
+            "deleted": "A Pribori is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Pribori {{ id }}?"
+            },
+            "detail": {
+                "title": "Pribori"
+            },
+            "naziv": "Naziv",
+            "vrsta": "Vrsta",
+            "jedMere": "Jed Mere",
+            "namena": "Namena",
+            "cena": "Cena",
+            "trajanje": "Trajanje",
+            "zahvati": "Zahvati"
+        }
+    }
+}

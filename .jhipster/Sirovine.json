@@ -1,0 +1,69 @@
+{
+    "name": "Sirovine",
+    "fields": [
+        {
+            "fieldName": "sifra",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "naziv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vrsta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jedMere",
+            "fieldType": "JedMere",
+            "fieldValues": "KOM,KG,L,M2,M3,TABLA"
+        },
+        {
+            "fieldName": "namena",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nabavnaCena",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "napomena",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "operacijeURadnomNalogu",
+            "otherEntityName": "operacijeURadnomNalogu",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "sirovine"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "operacije",
+            "otherEntityName": "operacije",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "sirovine"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "zahvati",
+            "otherEntityName": "zahvati",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "sirovine"
+        }
+    ],
+    "changelogDate": "20181104012435",
+    "entityTableName": "sirovine",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

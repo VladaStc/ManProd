@@ -1,0 +1,154 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="manProdApp.magacini.home.title">Magacinis</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-magacini" [routerLink]="['/magacini/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="manProdApp.magacini.home.createLabel">
+            Create new Magacini
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="magacinis">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.naziv">Naziv</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.lokacija">Lokacija</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.namena">Namena</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.rukovodilac">Rukovodilac</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.napomena">Napomena</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.tipMagacina">Tip Magacina</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.stavkeUMagacinu">Stavke U Magacinu</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.tansakcijeUMagacinu">Tansakcije U Magacinu</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.alati">Alati</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.pribori">Pribori</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.merniAlati">Merni Alati</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.finalniProizvod">Finalni Proizvod</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.poluproizvod">Poluproizvod</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.kupovniProizvod">Kupovni Proizvod</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.pomocniProizvod">Pomocni Proizvod</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.sirovine">Sirovine</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.kupovniMaterijal">Kupovni Materijal</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.komponente">Komponente</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.potrosniMaterijal">Potrosni Materijal</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.ostaliMaterijali">Ostali Materijali</span></th>
+            <th><span jhiTranslate="manProdApp.magacini.konstruktivnaSastavnica">Konstruktivna Sastavnica</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let magacini of magacinis ;trackBy: trackId">
+                <td><a [routerLink]="['/magacini', magacini.id, 'view' ]">{{magacini.id}}</a></td>
+                <td>{{magacini.naziv}}</td>
+                <td>{{magacini.lokacija}}</td>
+                <td>{{magacini.namena}}</td>
+                <td>{{magacini.rukovodilac}}</td>
+                <td>{{magacini.napomena}}</td>
+                <td jhiTranslate="{{'manProdApp.TipMagacina.' + magacini.tipMagacina}}">{{magacini.tipMagacina}}</td>
+                <td>
+                    <div *ngIf="magacini.stavkeUMagacinu">
+                        <a [routerLink]="['../stavke-u-magacinu', magacini.stavkeUMagacinu?.id, 'view' ]" >{{magacini.stavkeUMagacinu?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="magacini.tansakcijeUMagacinu">
+                        <a [routerLink]="['../transakcije-u-magacinu', magacini.tansakcijeUMagacinu?.id, 'view' ]" >{{magacini.tansakcijeUMagacinu?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="magacini.alati">
+                        <a [routerLink]="['../alati', magacini.alati?.id, 'view' ]" >{{magacini.alati?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="magacini.pribori">
+                        <a [routerLink]="['../pribori', magacini.pribori?.id, 'view' ]" >{{magacini.pribori?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="magacini.merniAlati">
+                        <a [routerLink]="['../merni-alati', magacini.merniAlati?.id, 'view' ]" >{{magacini.merniAlati?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="magacini.finalniProizvod">
+                        <a [routerLink]="['../finalni-proizvod', magacini.finalniProizvod?.id, 'view' ]" >{{magacini.finalniProizvod?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="magacini.poluproizvod">
+                        <a [routerLink]="['../poluproizvod', magacini.poluproizvod?.id, 'view' ]" >{{magacini.poluproizvod?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="magacini.kupovniProizvod">
+                        <a [routerLink]="['../kupovni-proizvod', magacini.kupovniProizvod?.id, 'view' ]" >{{magacini.kupovniProizvod?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="magacini.pomocniProizvod">
+                        <a [routerLink]="['../pomocni-proizvod', magacini.pomocniProizvod?.id, 'view' ]" >{{magacini.pomocniProizvod?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="magacini.sirovine">
+                        <a [routerLink]="['../sirovine', magacini.sirovine?.id, 'view' ]" >{{magacini.sirovine?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="magacini.kupovniMaterijal">
+                        <a [routerLink]="['../kupovni-materijal', magacini.kupovniMaterijal?.id, 'view' ]" >{{magacini.kupovniMaterijal?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="magacini.komponente">
+                        <a [routerLink]="['../komponenete', magacini.komponente?.id, 'view' ]" >{{magacini.komponente?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="magacini.potrosniMaterijal">
+                        <a [routerLink]="['../potrosni-materijal', magacini.potrosniMaterijal?.id, 'view' ]" >{{magacini.potrosniMaterijal?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="magacini.ostaliMaterijali">
+                        <a [routerLink]="['../ostali-materijali', magacini.ostaliMaterijali?.id, 'view' ]" >{{magacini.ostaliMaterijali?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="magacini.konstruktivnaSastavnica">
+                        <a [routerLink]="['../konstruktivna-sastavnica', magacini.konstruktivnaSastavnica?.id, 'view' ]" >{{magacini.konstruktivnaSastavnica?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/magacini', magacini.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/magacini', magacini.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'magacini/'+ magacini.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

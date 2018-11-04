@@ -1,0 +1,77 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-masina-heading" jhiTranslate="manProdApp.masina.home.createOrEditLabel">Create or edit a Masina</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!masina.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="masina.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.masina.naziv" for="field_naziv">Naziv</label>
+                    <input type="text" class="form-control" name="naziv" id="field_naziv"
+                        [(ngModel)]="masina.naziv" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.masina.lokacija" for="field_lokacija">Lokacija</label>
+                    <input type="text" class="form-control" name="lokacija" id="field_lokacija"
+                        [(ngModel)]="masina.lokacija" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.masina.struktura" for="field_struktura">Struktura</label>
+                    <input type="text" class="form-control" name="struktura" id="field_struktura"
+                        [(ngModel)]="masina.struktura" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.masina.rukovodilac" for="field_rukovodilac">Rukovodilac</label>
+                    <input type="text" class="form-control" name="rukovodilac" id="field_rukovodilac"
+                        [(ngModel)]="masina.rukovodilac" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.masina.napomena" for="field_napomena">Napomena</label>
+                    <input type="text" class="form-control" name="napomena" id="field_napomena"
+                        [(ngModel)]="masina.napomena" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.masina.obradniSistem" for="field_obradniSistem">Obradni Sistem</label>
+                    <select class="form-control" id="field_obradniSistem" name="obradniSistem" [(ngModel)]="masina.obradniSistem" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="obradniSistemOption.id === masina.obradniSistem?.id ? masina.obradniSistem : obradniSistemOption" *ngFor="let obradniSistemOption of obradnisistems; trackBy: trackObradniSistemById">{{obradniSistemOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.masina.operacijeURadnomNalogu" for="field_operacijeURadnomNalogu">Operacije U Radnom Nalogu</label>
+                    <select class="form-control" id="field_operacijeURadnomNalogu" name="operacijeURadnomNalogu" [(ngModel)]="masina.operacijeURadnomNalogu">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="operacijeURadnomNaloguOption.id === masina.operacijeURadnomNalogu?.id ? masina.operacijeURadnomNalogu : operacijeURadnomNaloguOption" *ngFor="let operacijeURadnomNaloguOption of operacijeuradnomnalogus; trackBy: trackOperacijeURadnomNaloguById">{{operacijeURadnomNaloguOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.masina.operacije" for="field_operacije">Operacije</label>
+                    <select class="form-control" id="field_operacije" name="operacije" [(ngModel)]="masina.operacije">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="operacijeOption.id === masina.operacije?.id ? masina.operacije : operacijeOption" *ngFor="let operacijeOption of operacijes; trackBy: trackOperacijeById">{{operacijeOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="manProdApp.masina.zahvati" for="field_zahvati">Zahvati</label>
+                    <select class="form-control" id="field_zahvati" name="zahvati" [(ngModel)]="masina.zahvati">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="zahvatiOption.id === masina.zahvati?.id ? masina.zahvati : zahvatiOption" *ngFor="let zahvatiOption of zahvatis; trackBy: trackZahvatiById">{{zahvatiOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

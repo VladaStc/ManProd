@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity ProizvodniPogoni.
+    -->
+    <changeSet id="20181104012415-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="proizvodne_linije_id"
+                                 baseTableName="proizvodni_pogoni"
+                                 constraintName="fk_proizvodni_pogoni_proizvodne_linije_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="proizvodne_linije"/>
+
+        <addForeignKeyConstraint baseColumnNames="obradni_sistem_id"
+                                 baseTableName="proizvodni_pogoni"
+                                 constraintName="fk_proizvodni_pogoni_obradni_sistem_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="obradni_sistem"/>
+
+    </changeSet>
+</databaseChangeLog>

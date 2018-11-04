@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="odelenje">
+            <h2><span jhiTranslate="manProdApp.odelenje.detail.title">Odelenje</span> {{odelenje.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="manProdApp.odelenje.naziv">Naziv</span></dt>
+                <dd>
+                    <span>{{odelenje.naziv}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.odelenje.lokacija">Lokacija</span></dt>
+                <dd>
+                    <span>{{odelenje.lokacija}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.odelenje.povrsina">Povrsina</span></dt>
+                <dd>
+                    <span>{{odelenje.povrsina}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.odelenje.rukovodilac">Rukovodilac</span></dt>
+                <dd>
+                    <span>{{odelenje.rukovodilac}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.odelenje.napomena">Napomena</span></dt>
+                <dd>
+                    <span>{{odelenje.napomena}}</span>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.odelenje.radionica">Radionica</span></dt>
+                <dd>
+                    <div *ngIf="odelenje.radionica">
+                        <a [routerLink]="['/radionica', odelenje.radionica?.id, 'view']">{{odelenje.radionica?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="manProdApp.odelenje.obradniSistem">Obradni Sistem</span></dt>
+                <dd>
+                    <div *ngIf="odelenje.obradniSistem">
+                        <a [routerLink]="['/obradni-sistem', odelenje.obradniSistem?.id, 'view']">{{odelenje.obradniSistem?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/odelenje', odelenje.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
