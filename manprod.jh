@@ -1,0 +1,419 @@
+entity ProizvodniPogoni {
+  naziv String,
+  lokacija String,
+  povrsina Double,
+  rukovodilac String,
+  napomena String
+  }
+
+entity ProizvodneLinije {
+  naziv String,
+  lokacija String,
+  povrsina Double,
+  rukovodilac String,
+  napomena String      
+  }
+
+entity Odelenje {
+  naziv String,
+  lokacija String,
+  povrsina Double,
+  rukovodilac String,
+  napomena String
+  }
+
+entity Radionica {
+  naziv String,
+  lokacija String,
+  povrsina Double,
+  rukovodilac String,
+  napomena String
+  }
+
+entity RadnoMesto {
+  naziv String,
+  lokacija String,
+  povrsina Double,
+  rukovodilac String,
+  normaSat Long
+  }
+
+entity ObradniSistem {
+  naziv String,
+  lokacija String,
+  struktura String,
+  rukovodilac String,
+  napomena String
+  }
+   
+entity Masina {
+  naziv String,
+  lokacija String,
+  struktura String,
+  rukovodilac String,
+  napomena String
+  }
+
+entity Oprema {
+  naziv String,
+  lokacija String,
+  struktura String,
+  rukovodilac String,
+  napomena String
+  }
+   
+entity Magacini {
+  naziv String,
+  lokacija String,
+  namena String,
+  rukovodilac String,
+  napomena String
+  tipMagacina TipMagacina
+  }
+  
+enum TipMagacina {
+  MAGACIN_SIROVINA, MAGACIN_GOTOVIH_PROIZVODA, MAGACIN_PROIZVODNJE_U_TOKU
+}
+entity StavkeUMagacinu{
+  stanje Double,
+  tipMagacina TipMagacina
+  }
+
+entity TransakcijeUMagacinu{
+  ulaz Double,
+  izlaz Double,
+  stanje Double,
+  napomena String,
+  datum Instant,
+  tipMagacina TipMagacina
+  }
+  
+entity Dobavljac{
+  naziv String,
+  lokacija String,
+  kolicina Double
+}
+   
+entity Alati{
+  naziv String,
+  vrsta String,
+  jedMere JedMere,
+  namena String,
+  cena Double,
+  trajanje Instant
+  }
+    
+enum JedMere {
+  KOM, KG, L, M2, M3, TABLA
+  }
+
+entity Pribori{
+  naziv String,
+  vrsta String,
+  jedMere JedMere,
+  namena String,
+  cena Double,
+  trajanje Instant
+  }
+
+entity MerniAlati{
+  naziv String,
+  vrsta String,
+  jedMere JedMere,
+  namena String,
+  cena Double,
+  trajanje Instant,
+  bazdarenje Instant
+  }
+
+entity Partner{
+  naziv String,
+  lokacija String
+}
+
+entity FinalniProizvod{
+  naziv String,
+  vrsta String,
+  jedMere JedMere,
+  namena String,
+  cena Double,
+  napomena String
+  }
+
+entity Poluproizvod{
+  naziv String,
+  vrsta String,
+  jedMere JedMere,
+  namena String,
+  cena Double,
+  napomena String
+  }
+
+entity KupovniProizvod{
+  naziv String,
+  vrsta String,
+  jedMere JedMere,
+  namena String,
+  cena Double,
+  napomena String
+  }
+
+entity PomocniProizvod{
+  naziv String,
+  vrsta String,
+  jedMere JedMere,
+  namena String,
+  cena Double,
+  napomena String
+}
+
+entity Sirovine{
+  sifra String,
+  naziv String,
+  vrsta String, 
+  jedMere JedMere,
+  namena String,
+  nabavnaCena Double,
+  napomena String
+  }
+
+entity KupovniMaterijal{
+  sifra String,
+  naziv String,
+  vrsta String,
+  jedMere JedMere,
+  namena String,
+  nabavnaCena Double,
+  napomena String
+  }
+
+entity Komponenete{
+  sifra String,
+  naziv String,
+  vrsta String,
+  jedMere JedMere,
+  namena String,
+  nabavnaCena Double,
+  napomena String
+  }
+
+entity PotrosniMaterijal{
+  sifra String,
+  naziv String,
+  vrsta String,
+  jedMere JedMere,
+  namena String,
+  nabavnaCena Double,
+  napomena String
+  }
+  
+entity PomocniMaterijal{
+  sifra String,
+  naziv String,
+  vrsta String,
+  jedMere JedMere,
+  namena String,
+  nabavnaCena Double,
+  napomena String
+  }
+
+entity OstaliMaterijali{
+  sifra String,
+  naziv String,
+  vrsta String,
+  jedMere JedMere,
+  namena String,
+  nabavnaCena Double,
+  napomena String
+  }
+
+entity KonstruktivnaSastavnica{
+  sifraDela String,
+  nazivDela String,
+  kolicina Double
+  }
+
+entity Radnici{
+  ime String,
+  prezime String,
+  jmbg Long,
+  kvalifikacija String,
+  koeficijent Double,
+  sertifikat String,
+  pol String,
+  napomena String,
+  tipRadnika TipRadnika
+  }
+  
+enum TipRadnika{
+ SOPSTVENI, ANGAZOVANI, POMOCNI
+}
+
+entity RadniNalog{
+  naziv String,
+  datumIVremeOtvaranja Instant,
+  datumIVremeZatvaranja Instant,
+  status Status,
+  nosilac String,
+  cena Double,
+  kolicina Double
+  }
+
+enum Status{
+  OTVOREN, AKTIVAN, ZATVOREN
+  }
+
+entity OperacijeURadnomNalogu{
+  naziv String,
+  vremeRada Double,
+  pripremnoZavrsnoVreme Double,
+  cena Double,
+  skica String,
+  datumIVremePocetka Instant,
+  datumIVremeZavrsetka Instant
+  }
+
+entity Operacije{
+  naziv String,
+  vremeRada Double,
+  pomocnoVreme Double,
+  cena Double,
+  skica String
+  }
+
+entity Zahvati{
+  naziv String,
+  vremeRada Double,
+  pomocnoVreme Double,
+  cena Double,
+  skica String
+  }
+  
+relationship OneToOne{
+  Radionica{radnoMesto} to RadnoMesto
+}
+
+relationship OneToOne{
+  Odelenje{radionica} to Radionica
+}
+
+relationship OneToOne{
+  ProizvodneLinije{odelenje} to Odelenje
+}
+
+relationship OneToOne{
+  ProizvodniPogoni{proizvodneLinije} to ProizvodneLinije
+}
+
+relationship OneToMany{
+  ObradniSistem{masina} to Masina
+}
+
+relationship OneToOne{
+  Odelenje{obradniSistem} to ObradniSistem
+}
+
+relationship OneToOne{
+  ProizvodneLinije{obradniSistem} to ObradniSistem
+}
+
+relationship OneToOne{
+  ProizvodniPogoni{obradniSistem} to ObradniSistem
+}
+
+relationship OneToMany{
+  ObradniSistem{oprema} to Oprema
+}
+
+relationship OneToOne{
+  Magacini{stavkeUMagacinu} to StavkeUMagacinu,
+  Magacini{tansakcijeUMagacinu} to TransakcijeUMagacinu
+}
+
+relationship OneToOne{
+  Dobavljac{alati} to Alati,
+  Dobavljac{pribori} to Pribori,
+  Dobavljac{merniAlati} to MerniAlati
+}
+
+relationship OneToOne{
+  Magacini{alati} to Alati,
+  Magacini{pribori} to Pribori,
+  Magacini{merniAlati} to MerniAlati
+}
+
+relationship OneToOne{
+  Partner{finalniProizvod} to FinalniProizvod,
+  Partner{poluproizvod} to Poluproizvod,
+  Partner{kupovniProizvod} to KupovniProizvod,
+  Partner{pomocniProizvod} to PomocniProizvod
+}
+
+relationship OneToOne{
+  Magacini{finalniProizvod} to FinalniProizvod,
+  Magacini{poluproizvod} to Poluproizvod,
+  Magacini{kupovniProizvod} to KupovniProizvod,
+  Magacini{pomocniProizvod} to PomocniProizvod
+}
+
+relationship OneToOne{
+  Magacini{sirovine} to Sirovine,
+  Magacini{kupovniMaterijal} to KupovniMaterijal,
+  Magacini{komponente} to Komponenete,
+  Magacini{potrosniMaterijal} to PotrosniMaterijal,
+  Magacini{ostaliMaterijali} to OstaliMaterijali
+}
+
+relationship OneToOne{
+  Partner{sirovine} to Sirovine,
+  Partner{kupovniMaterijal} to KupovniMaterijal,
+  Partner{komponente} to Komponenete,
+  Partner{potrosniMaterijal} to PotrosniMaterijal,
+  Partner{ostaliMaterijali} to OstaliMaterijali
+}
+
+relationship OneToOne{
+  ObradniSistem{konstruktivnaSastavnica} to KonstruktivnaSastavnica,
+  Magacini{konstruktivnaSastavnica} to KonstruktivnaSastavnica,
+}
+
+relationship OneToOne{
+  RadnoMesto{radnici} to Radnici
+}
+
+relationship OneToOne{
+  Sirovine{operacijeURadnomNalogu} to OperacijeURadnomNalogu,
+  Masina{operacijeURadnomNalogu} to OperacijeURadnomNalogu,
+  RadnoMesto{operacijeURadnomNalogu} to OperacijeURadnomNalogu,
+  Radnici{operacijeURadnomNalogu} to OperacijeURadnomNalogu,
+}
+
+relationship OneToOne{
+  OperacijeURadnomNalogu{radniNalog} to RadniNalog
+}
+
+relationship OneToOne{
+  Operacije{zahvati} to Zahvati
+}
+
+relationship OneToOne{
+  Sirovine{Operacije} to Operacije,
+  Masina{Operacije} to Operacije,
+  RadnoMesto{Operacije} to Operacije,  
+  Radnici{Operacije} to Operacije
+}
+
+relationship OneToOne{
+  Sirovine{Zahvati} to Zahvati,
+  Masina{Zahvati} to Zahvati,
+  Alati{Zahvati} to Zahvati,
+  PomocniMaterijal{Zahvati} to Zahvati,  
+  Pribori{Zahvati} to Zahvati,
+  RadnoMesto{Zahvati} to Zahvati,  
+  Radnici{Zahvati} to Zahvati
+  }
+  
+paginate RadniNalog, KonstruktivnaSastavnica with infinite-scroll
+paginate Radnici with pagination
+
+service all with serviceImpl
